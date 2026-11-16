@@ -95,10 +95,10 @@ mark { background: #fff1a6; padding: 0 6px; border-radius: 8px; font-weight: 700
 .talk { display: flex; flex-direction: column; gap: 12px; }
 .talk .row.right { flex-direction: row-reverse; }
 .talk .bubble { border: 3px solid var(--ink); font-size: 1.3em; line-height: 1.35; }
-.talk .bubble.bobo { background: #ffe9c7; border-radius: 24px 24px 6px 24px; }
+.talk .bubble.mimi { background: #ffe9c7; border-radius: 24px 24px 6px 24px; }
 .bubble mark { min-width: 3.2em; display: inline-block; text-align: center; }
 mark.right-ans { background: #bff0cf; color: #1f7a4a; } mark.wrong-ans { background: #ffd0d0; color: #b33; }
-.pic.bobo .emo { font-size: 60px; }
+.pic.mom .emo { font-size: 60px; }
 .book.cover { align-items: center; text-align: center; }
 .book.cover h2 { font-size: 2.2em; margin: 4px 0 0; } .book.cover p { margin: 0; opacity: .7; }
 .who { display: flex; gap: 12px; } .who .pic.mimi { width: 90px; height: 90px; }

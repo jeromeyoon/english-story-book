@@ -63,8 +63,8 @@
   const mimi = (mood = "") =>
     `<span class="pic mimi ${mood}"><span class="emo">🐰</span>` +
     `<img alt="" src="assets/img/mimi${mood ? "-" + mood : ""}.png" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></span>`;
-  const char = (who, mood = "") => who === "bobo"
-    ? `<span class="pic mimi bobo"><span class="emo">🐻</span><img alt="" src="assets/img/bobo.png" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></span>`
+  const char = (who, mood = "") => who === "mom"
+    ? `<span class="pic mimi mom"><span class="emo">🐇</span><img alt="" src="assets/img/mom.png" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></span>`
     : mimi(mood);
   const stars = (n, max = 3) => "⭐".repeat(n) + "<span class='dim'>" + "☆".repeat(max - n) + "</span>";
 
@@ -117,7 +117,7 @@
     const run = story.run && story.run.u === u ? story.run : (story.run = { u, first: 0 });
     if (page === -1) { run.first = 0; return cover(); }
     const bub = (who, html, extra = "") =>
-      `<div class="row ${who === "bobo" ? "right" : ""}">${char(who, extra)}<div class="bubble ${who}">${html}</div></div>`;
+      `<div class="row ${who === "mimi" ? "right" : ""}">${char(who, extra)}<div class="bubble ${who}">${html}</div></div>`;
     const scene = (pn, p) => `<div class="scene" style="--c:${U.color}"><span class="emo">${pn.scene}</span>
       <img alt="" src="assets/img/story/${u}-${page + 1}.png" onload="this.parentNode.classList.add('has')" onerror="this.remove()">
       <i class="pg">${page + 1}</i></div>`;
@@ -127,24 +127,24 @@
         <div class="scene big" style="--c:${U.color}"><span class="emo">${S.cover}</span>
           <img alt="" src="assets/img/story/${u}-cover.png" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></div>
         <h2>${S.title}</h2><p>${S.ko}</p>
-        <div class="who">${char("mimi")}${char("bobo")}</div>
+        <div class="who">${char("mom")}${char("mimi")}</div>
         <button class="btn big" id="go">📖 읽기 시작</button></section>`, { t: `Book ${u}`, onBack: () => unit(u) });
       speak(S.title);
       app.querySelector("#go").onclick = () => story(u, 0);
     }
     if (page >= N) return theEnd();
     const p = PAIRS.find(x => x.id === S.panels[page].pair), pn = S.panels[page];
-    const [l1, l2] = pn.lines, ok = accepted(p.a);
+    const l2 = pn.lines[pn.lines.length - 1], first = pn.lines.slice(0, -1), ok = accepted(p.a);
     const hi = (t) => t.replace(/___/, "<mark>___</mark>");
     let tries = 0;
     show(`<section class="book">
         <div class="progress"><i style="width:${page / N * 100}%"></i></div>
         ${scene(pn)}
-        <div class="talk" id="talk">${bub(l1[0], l1[1])}</div>
+        <div class="talk" id="talk">${first.map(l => bub(l[0], l[1])).join("")}</div>
         <div class="opts" id="ctl"><button class="btn" id="more">▶ 다음 말풍선</button></div>
       </section>`, { t: `${S.title} · ${page + 1}/${N}`, onBack: () => unit(u) });
-    speak(l1[1]);
-    app.querySelector(".talk .bubble").onclick = () => speak(l1[1]);
+    speak(first.map(l => l[1]).join(" "));
+    app.querySelectorAll(".talk .bubble").forEach((b, i) => b.onclick = () => speak(first[i][1]));
     app.querySelector("#more").onclick = () => {
       const pool = shuffle(allSides().filter(s => s.w.every(w => !ok.has(w) && !p.a.w.includes(w))));
       const wrong = []; const seen = new Set();
@@ -162,7 +162,7 @@
         if (ok.has(w)) {
           beep(true); if (tries === 1) run.first++;
           mk.textContent = w; mk.className = "right-ans";
-          talk.insertAdjacentHTML("beforeend", bub("mimi", `Yes! 🎉 <b>${label(p.a)}</b> ↔ <b>${label(p.b)}</b>`, "happy"));
+          talk.insertAdjacentHTML("beforeend", bub("mom", `Yes! 🎉 <b>${label(p.a)}</b> ↔ <b>${label(p.b)}</b>`, "happy"));
           speak(l2[1].replace("___", w));
           ctl.innerHTML = `<button class="btn" id="nx">${page === N - 1 ? "끝 ✔" : "다음 페이지 ▶"}</button>`;
           ctl.querySelector("#nx").onclick = () => story(u, page + 1);
@@ -174,7 +174,7 @@
       const n = run.first, s = n >= N - 1 ? 3 : n >= N * 0.6 ? 2 : 1;
       saveStars("story" + u, s);
       show(`<section class="book cover"><h2>The End 🎉</h2>
-        <div class="who">${char("mimi", "happy")}${char("bobo")}</div>
+        <div class="who">${char("mom")}${char("mimi", "happy")}</div>
         <div class="bigstars">${stars(s)}</div>
         <p>${N}쪽 중 ${n}쪽을 한 번에 맞혔어요!</p>
         <div class="nav"><button class="btn" id="re">다시 읽기</button>

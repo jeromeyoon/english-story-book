@@ -32,25 +32,25 @@
   },
   {
    "kind": "character",
-   "file": "bobo.png",
+   "file": "mom.png",
    "size": "512x512",
-   "desc": "Bobo, friendly brown bear, red scarf, Mimi's best friend"
+   "desc": "Mimi's mom: adult white bunny, pink inner ears, yellow apron, warm kind smile"
   },
   {
    "kind": "story",
    "file": "story/1-cover.png",
    "size": "1024x768",
-   "desc": "Book cover: \"The Big Zoo Day\". Mimi and Bobo in a sunny zoo. No text."
+   "desc": "Book cover: \"A Day at the Zoo\". Mom bunny and Mimi (child bunny) in a sunny zoo. No text."
   },
   {
    "kind": "story",
    "file": "story/1-1.png",
    "size": "1024x768",
    "pair": "big-small",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a sunny zoo. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The elephant is big. (2) The mouse is small.",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a sunny zoo. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): big vs small",
    "dialogue": [
-    "mimi: Look, Bobo! The elephant is big!",
-    "bobo: Wow! And the mouse is ___!"
+    "mom: Welcome to the zoo, Mimi! Look, the elephant is big.",
+    "mimi: Wow! The mouse next to it is ___!"
    ],
    "placeholder": "🐘🐭"
   },
@@ -59,136 +59,136 @@
    "file": "story/1-2.png",
    "size": "1024x768",
    "pair": "huge-tiny",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a sunny zoo. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The whale is huge. (2) The ant is tiny.",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a sunny zoo. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): huge vs tiny",
    "dialogue": [
-    "bobo: A whale! It is huge!",
-    "mimi: Look at the ant. It is ___!"
+    "mom: Next, the aquarium! The whale is huge!",
+    "mimi: Mom, look at the little fish. It is ___!"
    ],
-   "placeholder": "🐋🐜"
+   "placeholder": "🐋🐟"
   },
   {
    "kind": "story",
    "file": "story/1-3.png",
    "size": "1024x768",
    "pair": "tall-short",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a sunny zoo. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The giraffe is tall. (2) The dog is short.",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a sunny zoo. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): tall vs short",
    "dialogue": [
-    "mimi: The giraffe is tall.",
-    "bobo: My dog is ___."
+    "mom: Now let's see the giraffe. It is tall.",
+    "mimi: I am ___, Mom. I can't see it!"
    ],
-   "placeholder": "🦒🐕"
+   "placeholder": "🦒🐰"
   },
   {
    "kind": "story",
    "file": "story/1-4.png",
    "size": "1024x768",
    "pair": "long-short",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a sunny zoo. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The snake is long. (2) The crayon is short.",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a sunny zoo. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): long vs short",
    "dialogue": [
-    "bobo: The snake is long.",
-    "mimi: My crayon is ___."
+    "mom: Up here, I will lift you. Look! The snake is long.",
+    "mimi: And the baby snake is ___!"
    ],
-   "placeholder": "🐍🖍️"
+   "placeholder": "🐍🪱"
   },
   {
    "kind": "story",
    "file": "story/1-5.png",
    "size": "1024x768",
    "pair": "thick-thin",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a sunny zoo. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The book is thick. (2) The paper is thin.",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a sunny zoo. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): thick vs thin",
    "dialogue": [
-    "mimi: This zoo book is thick.",
-    "bobo: That paper map is ___."
+    "mom: Brrr, it is getting cold. Put on my thick coat.",
+    "mimi: Thank you! My coat is ___."
    ],
-   "placeholder": "📚📄"
+   "placeholder": "🧥🧣"
   },
   {
    "kind": "story",
    "file": "story/1-6.png",
    "size": "1024x768",
    "pair": "wide-narrow",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a sunny zoo. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The road is wide. (2) The bridge is narrow.",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a sunny zoo. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): wide vs narrow",
    "dialogue": [
-    "bobo: The road is wide.",
-    "mimi: The bridge is ___."
+    "mom: Time to go home. This road is wide.",
+    "mimi: But the path to the bus is ___."
    ],
-   "placeholder": "🛣️🌉"
+   "placeholder": "🛣️🚶"
   },
   {
    "kind": "story",
    "file": "story/2-cover.png",
    "size": "1024x768",
-   "desc": "Book cover: \"Mimi's Picnic\". Mimi and Bobo in a green park picnic. No text."
+   "desc": "Book cover: \"Picnic with Mom\". Mom bunny and Mimi (child bunny) in a green park picnic. No text."
   },
   {
    "kind": "story",
    "file": "story/2-1.png",
    "size": "1024x768",
    "pair": "heavy-light",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a green park picnic. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The rock is heavy. (2) The feather is light.",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a green park picnic. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): heavy vs light",
    "dialogue": [
-    "bobo: This rock is heavy!",
-    "mimi: This feather is ___."
+    "mom: We're at the park! This picnic basket is heavy.",
+    "mimi: I will carry the blanket. It is ___."
    ],
-   "placeholder": "🪨🪶"
+   "placeholder": "🧺🧣"
   },
   {
    "kind": "story",
    "file": "story/2-2.png",
    "size": "1024x768",
    "pair": "full-empty",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a green park picnic. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The cup is full. (2) The box is empty.",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a green park picnic. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): full vs empty",
    "dialogue": [
-    "mimi: My cup is full.",
-    "bobo: My box is ___."
+    "mom: Let's eat. The water bottle is full.",
+    "mimi: Oh no! The snack box is ___!"
    ],
-   "placeholder": "🥛📦"
+   "placeholder": "🥤📦"
   },
   {
    "kind": "story",
    "file": "story/2-3.png",
    "size": "1024x768",
    "pair": "deep-shallow",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a green park picnic. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The sea is deep. (2) The puddle is shallow.",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a green park picnic. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): deep vs shallow",
    "dialogue": [
-    "bobo: The sea is deep.",
-    "mimi: The puddle is ___."
+    "mom: Be careful at the lake. It is deep.",
+    "mimi: But the little stream is ___, right?"
    ],
-   "placeholder": "🌊💧"
+   "placeholder": "🌊💦"
   },
   {
    "kind": "story",
    "file": "story/2-4.png",
    "size": "1024x768",
    "pair": "high-low",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a green park picnic. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The kite is high. (2) The ball is low.",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a green park picnic. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): high vs low",
    "dialogue": [
-    "mimi: My kite is high!",
-    "bobo: My ball is ___."
+    "mom: Now let's fly your kite. Wow, it is high!",
+    "mimi: Oh no! Now it is ___!"
    ],
-   "placeholder": "🪁⚽"
+   "placeholder": "🪁🌱"
   },
   {
    "kind": "story",
    "file": "story/2-5.png",
    "size": "1024x768",
    "pair": "alot-some",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a green park picnic. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) I have a lot of candy. (2) I have some candy.",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a green park picnic. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): a lot of vs some",
    "dialogue": [
-    "bobo: I have a lot of candy.",
-    "mimi: I have ___ candy."
+    "mom: Look at these! We have a lot of strawberries.",
+    "mimi: I only want ___, Mom."
    ],
-   "placeholder": "🍬🍭"
+   "placeholder": "🍓🍓"
   },
   {
    "kind": "story",
    "file": "story/2-6.png",
    "size": "1024x768",
    "pair": "more-less",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a green park picnic. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) I have more juice. (2) You have less juice.",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a green park picnic. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): more vs less",
    "dialogue": [
-    "mimi: I have more juice.",
-    "bobo: I have ___ juice."
+    "mom: Do you want more juice, Mimi?",
+    "mimi: No, thank you. I want ___ juice."
    ],
    "placeholder": "🧃🥤"
   },
@@ -196,53 +196,53 @@
    "kind": "story",
    "file": "story/3-cover.png",
    "size": "1024x768",
-   "desc": "Book cover: \"Race Day\". Mimi and Bobo in a school sports field. No text."
+   "desc": "Book cover: \"Morning Rush\". Mom bunny and Mimi (child bunny) in a morning street on the way to school. No text."
   },
   {
    "kind": "story",
    "file": "story/3-1.png",
    "size": "1024x768",
-   "pair": "fast-slow",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a school sports field. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The rabbit is fast. (2) The turtle is slow.",
+   "pair": "early-late",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a morning street on the way to school. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): early vs late",
    "dialogue": [
-    "mimi: The rabbit is fast!",
-    "bobo: The turtle is ___."
+    "mom: Good morning, Mimi! Get up early today!",
+    "mimi: But I went to bed ___ last night."
    ],
-   "placeholder": "🐇🐢"
+   "placeholder": "⏰🌙"
   },
   {
    "kind": "story",
    "file": "story/3-2.png",
    "size": "1024x768",
-   "pair": "early-late",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a school sports field. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) I get up early. (2) I go to bed late.",
+   "pair": "fast-slow",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a morning street on the way to school. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): fast vs slow",
    "dialogue": [
-    "bobo: I get up early.",
-    "mimi: I go to bed ___."
+    "mom: Now let's walk fast, or we will miss the bus!",
+    "mimi: I can't, Mom. I am ___."
    ],
-   "placeholder": "🌅🌙"
+   "placeholder": "🏃🐢"
   },
   {
    "kind": "story",
    "file": "story/3-3.png",
    "size": "1024x768",
    "pair": "far-near",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a school sports field. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The moon is far. (2) The tree is near.",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a morning street on the way to school. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): far vs near",
    "dialogue": [
-    "mimi: The moon is far.",
-    "bobo: The tree is ___."
+    "mom: Then we go to the bus stop. It is far.",
+    "mimi: But the school is ___!"
    ],
-   "placeholder": "🌕🌳"
+   "placeholder": "🚏🏫"
   },
   {
    "kind": "story",
    "file": "story/3-4.png",
    "size": "1024x768",
    "pair": "right-left",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a school sports field. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) Raise your right hand. (2) Raise your left hand.",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a morning street on the way to school. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): right vs left",
    "dialogue": [
-    "bobo: Raise your right hand!",
-    "mimi: Now raise your ___ hand!"
+    "mom: Next, turn right at the corner.",
+    "mimi: And after that, turn ___?"
    ],
    "placeholder": "👉👈"
   },
@@ -251,118 +251,118 @@
    "file": "story/3-5.png",
    "size": "1024x768",
    "pair": "open-closed",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a school sports field. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The door is open. (2) The window is closed.",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a morning street on the way to school. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): open vs closed",
    "dialogue": [
-    "mimi: The door is open.",
-    "bobo: The window is ___."
+    "mom: Look! The school gate is open.",
+    "mimi: But the shop is ___."
    ],
-   "placeholder": "🚪🪟"
+   "placeholder": "🏫🏪"
   },
   {
    "kind": "story",
    "file": "story/3-6.png",
    "size": "1024x768",
    "pair": "tight-loose",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a school sports field. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The belt is tight. (2) The sock is loose.",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a morning street on the way to school. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): tight vs loose",
    "dialogue": [
-    "bobo: My belt is tight.",
-    "mimi: My sock is ___."
+    "mom: Wait, tie your shoes tight.",
+    "mimi: Oh! My lace is ___."
    ],
-   "placeholder": "🪢🧦"
+   "placeholder": "👟🪢"
   },
   {
    "kind": "story",
    "file": "story/4-cover.png",
    "size": "1024x768",
-   "desc": "Book cover: \"Bobo's Busy Day\". Mimi and Bobo in Bobo's cozy house and garden. No text."
+   "desc": "Book cover: \"A Rainy Day\". Mom bunny and Mimi (child bunny) in a cozy home on a rainy day. No text."
   },
   {
    "kind": "story",
    "file": "story/4-1.png",
    "size": "1024x768",
-   "pair": "hot-cold",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in Bobo's cozy house and garden. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The soup is hot. (2) The ice cream is cold.",
+   "pair": "wet-dry",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a cozy home on a rainy day. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): wet vs dry",
    "dialogue": [
-    "bobo: The soup is hot!",
-    "mimi: The ice cream is ___."
+    "mom: Mimi, you are wet! Here is a towel.",
+    "mimi: Thank you, Mom. Now I am ___."
    ],
-   "placeholder": "🍲🍦"
+   "placeholder": "☔🧺"
   },
   {
    "kind": "story",
    "file": "story/4-2.png",
    "size": "1024x768",
-   "pair": "wet-dry",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in Bobo's cozy house and garden. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The dog is wet. (2) The towel is dry.",
+   "pair": "hot-cold",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a cozy home on a rainy day. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): hot vs cold",
    "dialogue": [
-    "mimi: My dog is wet.",
-    "bobo: The towel is ___."
+    "mom: Now lunch. The soup is hot. Blow on it!",
+    "mimi: I like my juice ___."
    ],
-   "placeholder": "🐶🧺"
+   "placeholder": "🍲🧃"
   },
   {
    "kind": "story",
    "file": "story/4-3.png",
    "size": "1024x768",
-   "pair": "clean-dirty",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in Bobo's cozy house and garden. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) My hands are clean. (2) My shoes are dirty.",
+   "pair": "dark-bright",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a cozy home on a rainy day. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): dark vs bright",
    "dialogue": [
-    "bobo: My hands are clean.",
-    "mimi: My shoes are ___."
+    "mom: It is getting dark outside.",
+    "mimi: Let's turn on the lamp. It is ___!"
    ],
-   "placeholder": "🧼🥾"
+   "placeholder": "🌧️💡"
   },
   {
    "kind": "story",
    "file": "story/4-4.png",
    "size": "1024x768",
-   "pair": "dark-bright",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in Bobo's cozy house and garden. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The night is dark. (2) The sun is bright.",
+   "pair": "loud-quiet",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a cozy home on a rainy day. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): loud vs quiet",
    "dialogue": [
-    "mimi: The night is dark.",
-    "bobo: The sun is ___."
+    "mom: Boom! The thunder is loud.",
+    "mimi: Don't worry. Now it is ___."
    ],
-   "placeholder": "🌃☀️"
+   "placeholder": "⚡🤫"
   },
   {
    "kind": "story",
    "file": "story/4-5.png",
    "size": "1024x768",
-   "pair": "loud-quiet",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in Bobo's cozy house and garden. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The drum is loud. (2) The library is quiet.",
+   "pair": "clean-dirty",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a cozy home on a rainy day. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): clean vs dirty",
    "dialogue": [
-    "bobo: The drum is loud.",
-    "mimi: The library is ___."
+    "mom: Now wash up. I want your hands clean.",
+    "mimi: Look at my boots. They are ___."
    ],
-   "placeholder": "🥁🤫"
+   "placeholder": "🧼🥾"
   },
   {
    "kind": "story",
    "file": "story/4-6.png",
    "size": "1024x768",
    "pair": "old-new",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in Bobo's cozy house and garden. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The shoes are old. (2) The bag is new.",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a cozy home on a rainy day. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): old vs new",
    "dialogue": [
-    "mimi: My shoes are old.",
-    "bobo: My bag is ___."
+    "mom: This umbrella is old.",
+    "mimi: Can we buy a ___ one?"
    ],
-   "placeholder": "👟🎒"
+   "placeholder": "☂️🌂"
   },
   {
    "kind": "story",
    "file": "story/5-cover.png",
    "size": "1024x768",
-   "desc": "Book cover: \"The Mood Party\". Mimi and Bobo in a colorful birthday party. No text."
+   "desc": "Book cover: \"Evening Talk\". Mom bunny and Mimi (child bunny) in a warm evening living room at home. No text."
   },
   {
    "kind": "story",
    "file": "story/5-1.png",
    "size": "1024x768",
    "pair": "happy-sad",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a colorful birthday party. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) I am happy. (2) I am sad.",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a warm evening living room at home. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): happy vs sad",
    "dialogue": [
-    "mimi: I am happy!",
-    "bobo: I am ___."
+    "mom: Welcome home, Mimi! I am so happy to see you. How was school?",
+    "mimi: I was ___ at lunch. I dropped my cookie."
    ],
    "placeholder": "😀😢"
   },
@@ -371,58 +371,58 @@
    "file": "story/5-2.png",
    "size": "1024x768",
    "pair": "great-terrible",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a colorful birthday party. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The movie is great. (2) The storm is terrible.",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a warm evening living room at home. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): great vs terrible",
    "dialogue": [
-    "bobo: The movie is great!",
-    "mimi: The storm is ___."
+    "mom: Oh no! Well, the picture you drew is great!",
+    "mimi: Thanks! But my math test was ___."
    ],
-   "placeholder": "🎬⛈️"
+   "placeholder": "🎨📝"
   },
   {
    "kind": "story",
    "file": "story/5-3.png",
    "size": "1024x768",
    "pair": "interesting-boring",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a colorful birthday party. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The game is interesting. (2) The homework is boring.",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a warm evening living room at home. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): interesting vs boring",
    "dialogue": [
-    "mimi: The game is interesting.",
-    "bobo: The homework is ___."
+    "mom: Was story time interesting?",
+    "mimi: Yes! But math class was ___."
    ],
-   "placeholder": "🎮📝"
+   "placeholder": "📖➗"
   },
   {
    "kind": "story",
    "file": "story/5-4.png",
    "size": "1024x768",
-   "pair": "rich-poor",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a colorful birthday party. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The king is rich. (2) The man is poor.",
+   "pair": "old-young",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a warm evening living room at home. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): old vs young",
    "dialogue": [
-    "bobo: The king is rich.",
-    "mimi: The man is ___."
+    "mom: Now it's dinner time. Grandpa is old, but he is strong.",
+    "mimi: And my baby cousin is ___."
    ],
-   "placeholder": "👑🥺"
+   "placeholder": "👴👶"
   },
   {
    "kind": "story",
    "file": "story/5-5.png",
    "size": "1024x768",
-   "pair": "old-young",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a colorful birthday party. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) Grandpa is old. (2) The baby is young.",
+   "pair": "rich-poor",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a warm evening living room at home. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): rich vs poor",
    "dialogue": [
-    "mimi: Grandpa is old.",
-    "bobo: The baby is ___."
+    "mom: Let's read a book after dinner. In this story, the king is rich.",
+    "mimi: And the farmer is ___."
    ],
-   "placeholder": "👴👶"
+   "placeholder": "👑🌾"
   },
   {
    "kind": "story",
    "file": "story/5-6.png",
    "size": "1024x768",
    "pair": "right-wrong",
-   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a colorful birthday party. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) That answer is right. (2) That answer is wrong.",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a warm evening living room at home. Mom bunny and Mimi (child bunny) are in the scene. The two opposite words must be visible in the SAME scene (follow the dialogue): right vs wrong",
    "dialogue": [
-    "bobo: That answer is right!",
-    "mimi: That answer is ___."
+    "mom: Last, let's check your homework. This answer is right!",
+    "mimi: And this one is ___."
    ],
    "placeholder": "✅❌"
   },
