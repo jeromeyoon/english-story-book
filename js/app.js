@@ -119,13 +119,13 @@
     const bub = (who, html, extra = "") =>
       `<div class="row ${who === "mimi" ? "right" : ""}">${char(who, extra)}<div class="bubble ${who}">${html}</div></div>`;
     const scene = (pn, p) => `<div class="scene" style="--c:${U.color}"><span class="emo">${pn.scene}</span>
-      <img alt="" src="assets/img/story/${u}-${page + 1}.png" onload="this.parentNode.classList.add('has')" onerror="this.remove()">
+      <img alt="" src="assets/img/story/${u}-${page + 1}.jpg" onload="this.parentNode.classList.add('has')" onerror="this.remove()">
       <i class="pg">${page + 1}</i></div>`;
 
     function cover() {
       show(`<section class="book cover" style="--c:${U.color}">
         <div class="scene big" style="--c:${U.color}"><span class="emo">${S.cover}</span>
-          <img alt="" src="assets/img/story/${u}-cover.png" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></div>
+          <img alt="" src="assets/img/story/${u}-cover.jpg" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></div>
         <h2>${S.title}</h2><p>${S.ko}</p>
         <div class="who">${char("mom")}${char("mimi")}</div>
         <button class="btn big" id="go">📖 읽기 시작</button></section>`, { t: `Book ${u}`, onBack: () => unit(u) });
