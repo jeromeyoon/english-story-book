@@ -1,0 +1,85 @@
+:root {
+  --bg1: #d6efff; --bg2: #fff6e0; --ink: #2b2d42; --card: #ffffff; --brand: #ff7a59;
+  --good: #3ec27a; --bad: #ef6a6a; --soft: #e9eef5; --r: 28px;
+  --font: "Baloo 2", "Nunito", "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif;
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { height: 100%; margin: 0; }
+body {
+  font-family: var(--font); color: var(--ink); background: linear-gradient(180deg, var(--bg1), var(--bg2));
+  font-size: clamp(18px, 2.4vmin, 26px); -webkit-user-select: none; user-select: none;
+  touch-action: manipulation; overscroll-behavior: none; display: flex; flex-direction: column;
+  height: 100dvh; padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+button { font: inherit; color: inherit; border: 0; cursor: pointer; min-height: 56px; }
+.top { display: flex; align-items: center; gap: 12px; padding: 12px 20px; }
+.top h1 { flex: 1; text-align: center; margin: 0; font-size: 1.15em; }
+#back, .sp { width: 56px; height: 56px; }
+#back { border-radius: 50%; background: #fff; box-shadow: 0 4px 0 #cfd8e3; font-size: 1.1em; }
+#app { flex: 1; overflow-y: auto; padding: 8px clamp(16px, 4vw, 48px) 32px; max-width: 1100px; width: 100%; margin: 0 auto; }
+.h { text-align: center; margin: 8px 0 18px; } .h small { display: block; opacity: .6; font-size: .6em; }
+
+/* 그림/이모지 */
+.pic { position: relative; display: inline-grid; place-items: center; width: 64px; height: 64px; vertical-align: middle; }
+.pic .emo { font-size: 48px; line-height: 1; }
+.pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: none; }
+.pic.has img { display: block; } .pic.has .emo { visibility: hidden; }
+.pic.sm { width: 44px; height: 44px; } .pic.sm .emo { font-size: 34px; }
+.pic.lg { width: clamp(120px, 22vmin, 200px); height: clamp(120px, 22vmin, 200px); } .pic.lg .emo { font-size: clamp(84px, 15vmin, 140px); }
+.pic.mimi { width: 80px; height: 80px; flex: none; } .pic.mimi .emo { font-size: 60px; }
+
+/* 홈 */
+.hero { display: flex; align-items: center; gap: 16px; justify-content: center; margin: 4px 0 18px; }
+.hero .pic.mimi { width: 110px; height: 110px; } .hero .pic.mimi .emo { font-size: 84px; }
+.hello h2 { margin: 0; font-size: 1.6em; } .hello p { margin: 4px 0 0; opacity: .75; }
+.grid { display: grid; gap: 18px; }
+.units { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+.menu { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.card { background: var(--card); border-radius: var(--r); padding: 18px; box-shadow: 0 6px 0 rgba(0,0,0,.08); display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 1em; text-align: center; }
+.card:active, .btn:active, .opt:active { transform: translateY(3px); box-shadow: none; }
+.card.unit { border-top: 12px solid var(--c); }
+.card small { opacity: .65; } .big-emoji { font-size: 2.2em; }
+.menu .card { font-size: 2.2em; padding: 28px 18px; } .menu .card b { font-size: .5em; } .menu .card small { font-size: .35em; }
+.stars { letter-spacing: 2px; } .dim { opacity: .3; }
+.btn { background: var(--brand); color: #fff; border-radius: 999px; padding: 12px 28px; box-shadow: 0 5px 0 #d9573a; font-weight: 700; }
+.btn:disabled { opacity: .35; }
+.btn.good { background: var(--good); box-shadow: 0 5px 0 #2a9a5d; }
+.btn.big { font-size: 1.4em; padding: 18px 44px; }
+.btn.test { display: flex; flex-direction: column; align-items: center; width: 100%; margin-top: 22px; border-radius: var(--r); background: #4b6bfb; box-shadow: 0 5px 0 #3149c4; }
+.btn.test small { font-weight: 400; opacity: .9; }
+
+/* 카드 */
+.pairview { display: flex; align-items: stretch; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+.pairview .vs { align-self: center; font-size: 2em; }
+.tile { background: #fff; border-radius: var(--r); box-shadow: 0 6px 0 rgba(0,0,0,.08); padding: 20px 28px; min-width: 260px; flex: 1 1 260px; max-width: 420px; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.tile b { font-size: 1.8em; } .tile i { opacity: .7; font-style: normal; }
+.nav { display: flex; align-items: center; justify-content: center; gap: 24px; margin-top: 24px; }
+
+/* 대화 */
+.progress { height: 12px; background: rgba(255,255,255,.7); border-radius: 99px; overflow: hidden; margin: 4px 0 14px; }
+.progress i { display: block; height: 100%; background: var(--brand); transition: width .3s; }
+.chat { display: flex; flex-direction: column; gap: 14px; max-height: 46vh; overflow-y: auto; padding: 4px; }
+.row { display: flex; align-items: flex-end; gap: 10px; } .row.me { justify-content: flex-end; }
+.bubble { background: #fff; border-radius: 24px 24px 24px 6px; padding: 14px 20px; font-size: 1.15em; box-shadow: 0 3px 0 rgba(0,0,0,.08); max-width: 80%; }
+.bubble.me { background: #ffe3a8; border-radius: 24px 24px 6px 24px; }
+.bubble.happy { background: #d8f7e4; } .bubble.oops { background: #ffe0e0; }
+mark { background: #fff1a6; padding: 0 6px; border-radius: 8px; font-weight: 700; }
+.opts { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 22px; }
+.opt { background: #fff; border-radius: 22px; padding: 18px 34px; font-size: 1.5em; font-weight: 700; min-width: 150px; box-shadow: 0 6px 0 #cfd8e3; }
+.opt.good { background: var(--good); color: #fff; } .opt.bad { background: var(--bad); color: #fff; opacity: .6; }
+
+/* 말하기 */
+.say { display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; }
+.hint { opacity: .75; margin: 0; }
+.word { background: #fff; border-radius: 36px; padding: 24px 56px; box-shadow: 0 8px 0 rgba(0,0,0,.08); display: flex; flex-direction: column; align-items: center; }
+.word b { font-size: clamp(2.2em, 8vmin, 3.6em); } .word small { opacity: .6; }
+.answer { display: flex; gap: 14px; align-items: center; justify-content: center; font-size: 2.4em; color: #2a9a5d; flex-wrap: wrap; }
+.answer span { font-size: .4em; color: var(--ink); opacity: .6; }
+
+/* 결과 */
+.result { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+.result .pic.mimi { width: 140px; height: 140px; } .result .pic.mimi .emo { font-size: 110px; }
+.result h2 { font-size: 2.4em; margin: 0; } .bigstars { font-size: 3em; }
+.review { background: #fff; border-radius: var(--r); padding: 14px 22px; display: flex; flex-direction: column; gap: 6px; }
+
+@media (max-width: 600px) { .tile { min-width: 100%; } .pairview .vs { display: none; } }

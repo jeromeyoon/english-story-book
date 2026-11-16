@@ -1,0 +1,380 @@
+{
+ "size": "512x512 transparent PNG, centered, ~10% padding",
+ "dir": "assets/img/",
+ "style": "see art/STYLE.md",
+ "count": 63,
+ "items": [
+  {
+   "file": "mimi.png",
+   "desc": "Mimi, the white bunny mascot, standing, waving, friendly smile (default)"
+  },
+  {
+   "file": "mimi-happy.png",
+   "desc": "Mimi jumping with joy, eyes sparkling (correct answer)"
+  },
+  {
+   "file": "mimi-oops.png",
+   "desc": "Mimi tilting head, small sweat drop, encouraging (wrong answer)"
+  },
+  {
+   "file": "big-small-a.png",
+   "word": "big/large",
+   "desc": "The elephant is big — draw the scene so the meaning of 'big' is obvious without text",
+   "placeholder": "🐘"
+  },
+  {
+   "file": "big-small-b.png",
+   "word": "small",
+   "desc": "The mouse is small — draw the scene so the meaning of 'small' is obvious without text",
+   "placeholder": "🐭"
+  },
+  {
+   "file": "huge-tiny-a.png",
+   "word": "huge",
+   "desc": "The whale is huge — draw the scene so the meaning of 'huge' is obvious without text",
+   "placeholder": "🐋"
+  },
+  {
+   "file": "huge-tiny-b.png",
+   "word": "tiny",
+   "desc": "The ant is tiny — draw the scene so the meaning of 'tiny' is obvious without text",
+   "placeholder": "🐜"
+  },
+  {
+   "file": "tall-short-a.png",
+   "word": "tall",
+   "desc": "The giraffe is tall — draw the scene so the meaning of 'tall' is obvious without text",
+   "placeholder": "🦒"
+  },
+  {
+   "file": "tall-short-b.png",
+   "word": "short",
+   "desc": "The dog is short — draw the scene so the meaning of 'short' is obvious without text",
+   "placeholder": "🐕"
+  },
+  {
+   "file": "long-short-a.png",
+   "word": "long",
+   "desc": "The snake is long — draw the scene so the meaning of 'long' is obvious without text",
+   "placeholder": "🐍"
+  },
+  {
+   "file": "long-short-b.png",
+   "word": "short",
+   "desc": "The crayon is short — draw the scene so the meaning of 'short' is obvious without text",
+   "placeholder": "🖍️"
+  },
+  {
+   "file": "thick-thin-a.png",
+   "word": "thick",
+   "desc": "The book is thick — draw the scene so the meaning of 'thick' is obvious without text",
+   "placeholder": "📚"
+  },
+  {
+   "file": "thick-thin-b.png",
+   "word": "thin",
+   "desc": "The paper is thin — draw the scene so the meaning of 'thin' is obvious without text",
+   "placeholder": "📄"
+  },
+  {
+   "file": "wide-narrow-a.png",
+   "word": "wide",
+   "desc": "The road is wide — draw the scene so the meaning of 'wide' is obvious without text",
+   "placeholder": "🛣️"
+  },
+  {
+   "file": "wide-narrow-b.png",
+   "word": "narrow",
+   "desc": "The bridge is narrow — draw the scene so the meaning of 'narrow' is obvious without text",
+   "placeholder": "🌉"
+  },
+  {
+   "file": "heavy-light-a.png",
+   "word": "heavy",
+   "desc": "The rock is heavy — draw the scene so the meaning of 'heavy' is obvious without text",
+   "placeholder": "🪨"
+  },
+  {
+   "file": "heavy-light-b.png",
+   "word": "light",
+   "desc": "The feather is light — draw the scene so the meaning of 'light' is obvious without text",
+   "placeholder": "🪶"
+  },
+  {
+   "file": "full-empty-a.png",
+   "word": "full",
+   "desc": "The cup is full — draw the scene so the meaning of 'full' is obvious without text",
+   "placeholder": "🥛"
+  },
+  {
+   "file": "full-empty-b.png",
+   "word": "empty",
+   "desc": "The box is empty — draw the scene so the meaning of 'empty' is obvious without text",
+   "placeholder": "📦"
+  },
+  {
+   "file": "deep-shallow-a.png",
+   "word": "deep",
+   "desc": "The sea is deep — draw the scene so the meaning of 'deep' is obvious without text",
+   "placeholder": "🌊"
+  },
+  {
+   "file": "deep-shallow-b.png",
+   "word": "shallow",
+   "desc": "The puddle is shallow — draw the scene so the meaning of 'shallow' is obvious without text",
+   "placeholder": "💧"
+  },
+  {
+   "file": "high-low-a.png",
+   "word": "high",
+   "desc": "The kite is high — draw the scene so the meaning of 'high' is obvious without text",
+   "placeholder": "🪁"
+  },
+  {
+   "file": "high-low-b.png",
+   "word": "low",
+   "desc": "The ball is low — draw the scene so the meaning of 'low' is obvious without text",
+   "placeholder": "⚽"
+  },
+  {
+   "file": "alot-some-a.png",
+   "word": "a lot of",
+   "desc": "I have a lot of candy — draw the scene so the meaning of 'a lot of' is obvious without text",
+   "placeholder": "🍬"
+  },
+  {
+   "file": "alot-some-b.png",
+   "word": "some",
+   "desc": "I have some candy — draw the scene so the meaning of 'some' is obvious without text",
+   "placeholder": "🍭"
+  },
+  {
+   "file": "more-less-a.png",
+   "word": "more",
+   "desc": "I have more juice — draw the scene so the meaning of 'more' is obvious without text",
+   "placeholder": "🧃"
+  },
+  {
+   "file": "more-less-b.png",
+   "word": "less",
+   "desc": "You have less juice — draw the scene so the meaning of 'less' is obvious without text",
+   "placeholder": "🥤"
+  },
+  {
+   "file": "fast-slow-a.png",
+   "word": "fast",
+   "desc": "The rabbit is fast — draw the scene so the meaning of 'fast' is obvious without text",
+   "placeholder": "🐇"
+  },
+  {
+   "file": "fast-slow-b.png",
+   "word": "slow",
+   "desc": "The turtle is slow — draw the scene so the meaning of 'slow' is obvious without text",
+   "placeholder": "🐢"
+  },
+  {
+   "file": "early-late-a.png",
+   "word": "early",
+   "desc": "I get up early — draw the scene so the meaning of 'early' is obvious without text",
+   "placeholder": "🌅"
+  },
+  {
+   "file": "early-late-b.png",
+   "word": "late",
+   "desc": "I go to bed late — draw the scene so the meaning of 'late' is obvious without text",
+   "placeholder": "🌙"
+  },
+  {
+   "file": "far-near-a.png",
+   "word": "far",
+   "desc": "The moon is far — draw the scene so the meaning of 'far' is obvious without text",
+   "placeholder": "🌕"
+  },
+  {
+   "file": "far-near-b.png",
+   "word": "near",
+   "desc": "The tree is near — draw the scene so the meaning of 'near' is obvious without text",
+   "placeholder": "🌳"
+  },
+  {
+   "file": "right-left-a.png",
+   "word": "right",
+   "desc": "Raise your right hand — draw the scene so the meaning of 'right' is obvious without text",
+   "placeholder": "👉"
+  },
+  {
+   "file": "right-left-b.png",
+   "word": "left",
+   "desc": "Raise your left hand — draw the scene so the meaning of 'left' is obvious without text",
+   "placeholder": "👈"
+  },
+  {
+   "file": "open-closed-a.png",
+   "word": "open",
+   "desc": "The door is open — draw the scene so the meaning of 'open' is obvious without text",
+   "placeholder": "🚪"
+  },
+  {
+   "file": "open-closed-b.png",
+   "word": "closed",
+   "desc": "The window is closed — draw the scene so the meaning of 'closed' is obvious without text",
+   "placeholder": "🪟"
+  },
+  {
+   "file": "tight-loose-a.png",
+   "word": "tight",
+   "desc": "The belt is tight — draw the scene so the meaning of 'tight' is obvious without text",
+   "placeholder": "🪢"
+  },
+  {
+   "file": "tight-loose-b.png",
+   "word": "loose",
+   "desc": "The sock is loose — draw the scene so the meaning of 'loose' is obvious without text",
+   "placeholder": "🧦"
+  },
+  {
+   "file": "hot-cold-a.png",
+   "word": "hot",
+   "desc": "The soup is hot — draw the scene so the meaning of 'hot' is obvious without text",
+   "placeholder": "🍲"
+  },
+  {
+   "file": "hot-cold-b.png",
+   "word": "cold",
+   "desc": "The ice cream is cold — draw the scene so the meaning of 'cold' is obvious without text",
+   "placeholder": "🍦"
+  },
+  {
+   "file": "wet-dry-a.png",
+   "word": "wet",
+   "desc": "The dog is wet — draw the scene so the meaning of 'wet' is obvious without text",
+   "placeholder": "🐶"
+  },
+  {
+   "file": "wet-dry-b.png",
+   "word": "dry",
+   "desc": "The towel is dry — draw the scene so the meaning of 'dry' is obvious without text",
+   "placeholder": "🧺"
+  },
+  {
+   "file": "clean-dirty-a.png",
+   "word": "clean",
+   "desc": "My hands are clean — draw the scene so the meaning of 'clean' is obvious without text",
+   "placeholder": "🧼"
+  },
+  {
+   "file": "clean-dirty-b.png",
+   "word": "dirty",
+   "desc": "My shoes are dirty — draw the scene so the meaning of 'dirty' is obvious without text",
+   "placeholder": "🥾"
+  },
+  {
+   "file": "dark-bright-a.png",
+   "word": "dark",
+   "desc": "The night is dark — draw the scene so the meaning of 'dark' is obvious without text",
+   "placeholder": "🌃"
+  },
+  {
+   "file": "dark-bright-b.png",
+   "word": "bright/light",
+   "desc": "The sun is bright — draw the scene so the meaning of 'bright' is obvious without text",
+   "placeholder": "☀️"
+  },
+  {
+   "file": "loud-quiet-a.png",
+   "word": "loud",
+   "desc": "The drum is loud — draw the scene so the meaning of 'loud' is obvious without text",
+   "placeholder": "🥁"
+  },
+  {
+   "file": "loud-quiet-b.png",
+   "word": "quiet",
+   "desc": "The library is quiet — draw the scene so the meaning of 'quiet' is obvious without text",
+   "placeholder": "🤫"
+  },
+  {
+   "file": "old-new-a.png",
+   "word": "old",
+   "desc": "The shoes are old — draw the scene so the meaning of 'old' is obvious without text",
+   "placeholder": "👟"
+  },
+  {
+   "file": "old-new-b.png",
+   "word": "new",
+   "desc": "The bag is new — draw the scene so the meaning of 'new' is obvious without text",
+   "placeholder": "🎒"
+  },
+  {
+   "file": "happy-sad-a.png",
+   "word": "happy",
+   "desc": "I am happy — draw the scene so the meaning of 'happy' is obvious without text",
+   "placeholder": "😀"
+  },
+  {
+   "file": "happy-sad-b.png",
+   "word": "sad",
+   "desc": "I am sad — draw the scene so the meaning of 'sad' is obvious without text",
+   "placeholder": "😢"
+  },
+  {
+   "file": "great-terrible-a.png",
+   "word": "great",
+   "desc": "The movie is great — draw the scene so the meaning of 'great' is obvious without text",
+   "placeholder": "🎬"
+  },
+  {
+   "file": "great-terrible-b.png",
+   "word": "terrible",
+   "desc": "The storm is terrible — draw the scene so the meaning of 'terrible' is obvious without text",
+   "placeholder": "⛈️"
+  },
+  {
+   "file": "interesting-boring-a.png",
+   "word": "interesting",
+   "desc": "The game is interesting — draw the scene so the meaning of 'interesting' is obvious without text",
+   "placeholder": "🎮"
+  },
+  {
+   "file": "interesting-boring-b.png",
+   "word": "boring",
+   "desc": "The homework is boring — draw the scene so the meaning of 'boring' is obvious without text",
+   "placeholder": "📝"
+  },
+  {
+   "file": "rich-poor-a.png",
+   "word": "rich",
+   "desc": "The king is rich — draw the scene so the meaning of 'rich' is obvious without text",
+   "placeholder": "👑"
+  },
+  {
+   "file": "rich-poor-b.png",
+   "word": "poor",
+   "desc": "The man is poor — draw the scene so the meaning of 'poor' is obvious without text",
+   "placeholder": "🥺"
+  },
+  {
+   "file": "old-young-a.png",
+   "word": "old",
+   "desc": "Grandpa is old — draw the scene so the meaning of 'old' is obvious without text",
+   "placeholder": "👴"
+  },
+  {
+   "file": "old-young-b.png",
+   "word": "young",
+   "desc": "The baby is young — draw the scene so the meaning of 'young' is obvious without text",
+   "placeholder": "👶"
+  },
+  {
+   "file": "right-wrong-a.png",
+   "word": "right",
+   "desc": "That answer is right — draw the scene so the meaning of 'right' is obvious without text",
+   "placeholder": "✅"
+  },
+  {
+   "file": "right-wrong-b.png",
+   "word": "wrong",
+   "desc": "That answer is wrong — draw the scene so the meaning of 'wrong' is obvious without text",
+   "placeholder": "❌"
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Opposite Friends",
+  "short_name": "Opposites",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#d6efff",
+  "theme_color": "#bfe6ff",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
