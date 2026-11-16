@@ -1,379 +1,909 @@
 {
- "size": "512x512 transparent PNG, centered, ~10% padding",
  "dir": "assets/img/",
  "style": "see art/STYLE.md",
- "count": 63,
+ "priority": [
+  "character",
+  "story",
+  "word"
+ ],
+ "counts": {
+  "character": 4,
+  "story": 35,
+  "word": 60
+ },
  "items": [
   {
+   "kind": "character",
    "file": "mimi.png",
-   "desc": "Mimi, the white bunny mascot, standing, waving, friendly smile (default)"
+   "size": "512x512",
+   "desc": "Mimi, white bunny, pink inner ears, blue overalls, waving, friendly smile"
   },
   {
+   "kind": "character",
    "file": "mimi-happy.png",
-   "desc": "Mimi jumping with joy, eyes sparkling (correct answer)"
+   "size": "512x512",
+   "desc": "Mimi jumping with joy (correct answer)"
   },
   {
+   "kind": "character",
    "file": "mimi-oops.png",
+   "size": "512x512",
    "desc": "Mimi tilting head, small sweat drop, encouraging (wrong answer)"
   },
   {
+   "kind": "character",
+   "file": "bobo.png",
+   "size": "512x512",
+   "desc": "Bobo, friendly brown bear, red scarf, Mimi's best friend"
+  },
+  {
+   "kind": "story",
+   "file": "story/1-cover.png",
+   "size": "1024x768",
+   "desc": "Book cover: \"The Big Zoo Day\". Mimi and Bobo in a sunny zoo. No text."
+  },
+  {
+   "kind": "story",
+   "file": "story/1-1.png",
+   "size": "1024x768",
+   "pair": "big-small",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a sunny zoo. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The elephant is big. (2) The mouse is small.",
+   "dialogue": [
+    "mimi: Look, Bobo! The elephant is big!",
+    "bobo: Wow! And the mouse is ___!"
+   ],
+   "placeholder": "🐘🐭"
+  },
+  {
+   "kind": "story",
+   "file": "story/1-2.png",
+   "size": "1024x768",
+   "pair": "huge-tiny",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a sunny zoo. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The whale is huge. (2) The ant is tiny.",
+   "dialogue": [
+    "bobo: A whale! It is huge!",
+    "mimi: Look at the ant. It is ___!"
+   ],
+   "placeholder": "🐋🐜"
+  },
+  {
+   "kind": "story",
+   "file": "story/1-3.png",
+   "size": "1024x768",
+   "pair": "tall-short",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a sunny zoo. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The giraffe is tall. (2) The dog is short.",
+   "dialogue": [
+    "mimi: The giraffe is tall.",
+    "bobo: My dog is ___."
+   ],
+   "placeholder": "🦒🐕"
+  },
+  {
+   "kind": "story",
+   "file": "story/1-4.png",
+   "size": "1024x768",
+   "pair": "long-short",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a sunny zoo. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The snake is long. (2) The crayon is short.",
+   "dialogue": [
+    "bobo: The snake is long.",
+    "mimi: My crayon is ___."
+   ],
+   "placeholder": "🐍🖍️"
+  },
+  {
+   "kind": "story",
+   "file": "story/1-5.png",
+   "size": "1024x768",
+   "pair": "thick-thin",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a sunny zoo. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The book is thick. (2) The paper is thin.",
+   "dialogue": [
+    "mimi: This zoo book is thick.",
+    "bobo: That paper map is ___."
+   ],
+   "placeholder": "📚📄"
+  },
+  {
+   "kind": "story",
+   "file": "story/1-6.png",
+   "size": "1024x768",
+   "pair": "wide-narrow",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a sunny zoo. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The road is wide. (2) The bridge is narrow.",
+   "dialogue": [
+    "bobo: The road is wide.",
+    "mimi: The bridge is ___."
+   ],
+   "placeholder": "🛣️🌉"
+  },
+  {
+   "kind": "story",
+   "file": "story/2-cover.png",
+   "size": "1024x768",
+   "desc": "Book cover: \"Mimi's Picnic\". Mimi and Bobo in a green park picnic. No text."
+  },
+  {
+   "kind": "story",
+   "file": "story/2-1.png",
+   "size": "1024x768",
+   "pair": "heavy-light",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a green park picnic. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The rock is heavy. (2) The feather is light.",
+   "dialogue": [
+    "bobo: This rock is heavy!",
+    "mimi: This feather is ___."
+   ],
+   "placeholder": "🪨🪶"
+  },
+  {
+   "kind": "story",
+   "file": "story/2-2.png",
+   "size": "1024x768",
+   "pair": "full-empty",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a green park picnic. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The cup is full. (2) The box is empty.",
+   "dialogue": [
+    "mimi: My cup is full.",
+    "bobo: My box is ___."
+   ],
+   "placeholder": "🥛📦"
+  },
+  {
+   "kind": "story",
+   "file": "story/2-3.png",
+   "size": "1024x768",
+   "pair": "deep-shallow",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a green park picnic. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The sea is deep. (2) The puddle is shallow.",
+   "dialogue": [
+    "bobo: The sea is deep.",
+    "mimi: The puddle is ___."
+   ],
+   "placeholder": "🌊💧"
+  },
+  {
+   "kind": "story",
+   "file": "story/2-4.png",
+   "size": "1024x768",
+   "pair": "high-low",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a green park picnic. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The kite is high. (2) The ball is low.",
+   "dialogue": [
+    "mimi: My kite is high!",
+    "bobo: My ball is ___."
+   ],
+   "placeholder": "🪁⚽"
+  },
+  {
+   "kind": "story",
+   "file": "story/2-5.png",
+   "size": "1024x768",
+   "pair": "alot-some",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a green park picnic. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) I have a lot of candy. (2) I have some candy.",
+   "dialogue": [
+    "bobo: I have a lot of candy.",
+    "mimi: I have ___ candy."
+   ],
+   "placeholder": "🍬🍭"
+  },
+  {
+   "kind": "story",
+   "file": "story/2-6.png",
+   "size": "1024x768",
+   "pair": "more-less",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a green park picnic. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) I have more juice. (2) You have less juice.",
+   "dialogue": [
+    "mimi: I have more juice.",
+    "bobo: I have ___ juice."
+   ],
+   "placeholder": "🧃🥤"
+  },
+  {
+   "kind": "story",
+   "file": "story/3-cover.png",
+   "size": "1024x768",
+   "desc": "Book cover: \"Race Day\". Mimi and Bobo in a school sports field. No text."
+  },
+  {
+   "kind": "story",
+   "file": "story/3-1.png",
+   "size": "1024x768",
+   "pair": "fast-slow",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a school sports field. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The rabbit is fast. (2) The turtle is slow.",
+   "dialogue": [
+    "mimi: The rabbit is fast!",
+    "bobo: The turtle is ___."
+   ],
+   "placeholder": "🐇🐢"
+  },
+  {
+   "kind": "story",
+   "file": "story/3-2.png",
+   "size": "1024x768",
+   "pair": "early-late",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a school sports field. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) I get up early. (2) I go to bed late.",
+   "dialogue": [
+    "bobo: I get up early.",
+    "mimi: I go to bed ___."
+   ],
+   "placeholder": "🌅🌙"
+  },
+  {
+   "kind": "story",
+   "file": "story/3-3.png",
+   "size": "1024x768",
+   "pair": "far-near",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a school sports field. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The moon is far. (2) The tree is near.",
+   "dialogue": [
+    "mimi: The moon is far.",
+    "bobo: The tree is ___."
+   ],
+   "placeholder": "🌕🌳"
+  },
+  {
+   "kind": "story",
+   "file": "story/3-4.png",
+   "size": "1024x768",
+   "pair": "right-left",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a school sports field. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) Raise your right hand. (2) Raise your left hand.",
+   "dialogue": [
+    "bobo: Raise your right hand!",
+    "mimi: Now raise your ___ hand!"
+   ],
+   "placeholder": "👉👈"
+  },
+  {
+   "kind": "story",
+   "file": "story/3-5.png",
+   "size": "1024x768",
+   "pair": "open-closed",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a school sports field. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The door is open. (2) The window is closed.",
+   "dialogue": [
+    "mimi: The door is open.",
+    "bobo: The window is ___."
+   ],
+   "placeholder": "🚪🪟"
+  },
+  {
+   "kind": "story",
+   "file": "story/3-6.png",
+   "size": "1024x768",
+   "pair": "tight-loose",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a school sports field. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The belt is tight. (2) The sock is loose.",
+   "dialogue": [
+    "bobo: My belt is tight.",
+    "mimi: My sock is ___."
+   ],
+   "placeholder": "🪢🧦"
+  },
+  {
+   "kind": "story",
+   "file": "story/4-cover.png",
+   "size": "1024x768",
+   "desc": "Book cover: \"Bobo's Busy Day\". Mimi and Bobo in Bobo's cozy house and garden. No text."
+  },
+  {
+   "kind": "story",
+   "file": "story/4-1.png",
+   "size": "1024x768",
+   "pair": "hot-cold",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in Bobo's cozy house and garden. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The soup is hot. (2) The ice cream is cold.",
+   "dialogue": [
+    "bobo: The soup is hot!",
+    "mimi: The ice cream is ___."
+   ],
+   "placeholder": "🍲🍦"
+  },
+  {
+   "kind": "story",
+   "file": "story/4-2.png",
+   "size": "1024x768",
+   "pair": "wet-dry",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in Bobo's cozy house and garden. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The dog is wet. (2) The towel is dry.",
+   "dialogue": [
+    "mimi: My dog is wet.",
+    "bobo: The towel is ___."
+   ],
+   "placeholder": "🐶🧺"
+  },
+  {
+   "kind": "story",
+   "file": "story/4-3.png",
+   "size": "1024x768",
+   "pair": "clean-dirty",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in Bobo's cozy house and garden. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) My hands are clean. (2) My shoes are dirty.",
+   "dialogue": [
+    "bobo: My hands are clean.",
+    "mimi: My shoes are ___."
+   ],
+   "placeholder": "🧼🥾"
+  },
+  {
+   "kind": "story",
+   "file": "story/4-4.png",
+   "size": "1024x768",
+   "pair": "dark-bright",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in Bobo's cozy house and garden. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The night is dark. (2) The sun is bright.",
+   "dialogue": [
+    "mimi: The night is dark.",
+    "bobo: The sun is ___."
+   ],
+   "placeholder": "🌃☀️"
+  },
+  {
+   "kind": "story",
+   "file": "story/4-5.png",
+   "size": "1024x768",
+   "pair": "loud-quiet",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in Bobo's cozy house and garden. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The drum is loud. (2) The library is quiet.",
+   "dialogue": [
+    "bobo: The drum is loud.",
+    "mimi: The library is ___."
+   ],
+   "placeholder": "🥁🤫"
+  },
+  {
+   "kind": "story",
+   "file": "story/4-6.png",
+   "size": "1024x768",
+   "pair": "old-new",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in Bobo's cozy house and garden. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The shoes are old. (2) The bag is new.",
+   "dialogue": [
+    "mimi: My shoes are old.",
+    "bobo: My bag is ___."
+   ],
+   "placeholder": "👟🎒"
+  },
+  {
+   "kind": "story",
+   "file": "story/5-cover.png",
+   "size": "1024x768",
+   "desc": "Book cover: \"The Mood Party\". Mimi and Bobo in a colorful birthday party. No text."
+  },
+  {
+   "kind": "story",
+   "file": "story/5-1.png",
+   "size": "1024x768",
+   "pair": "happy-sad",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a colorful birthday party. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) I am happy. (2) I am sad.",
+   "dialogue": [
+    "mimi: I am happy!",
+    "bobo: I am ___."
+   ],
+   "placeholder": "😀😢"
+  },
+  {
+   "kind": "story",
+   "file": "story/5-2.png",
+   "size": "1024x768",
+   "pair": "great-terrible",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a colorful birthday party. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The movie is great. (2) The storm is terrible.",
+   "dialogue": [
+    "bobo: The movie is great!",
+    "mimi: The storm is ___."
+   ],
+   "placeholder": "🎬⛈️"
+  },
+  {
+   "kind": "story",
+   "file": "story/5-3.png",
+   "size": "1024x768",
+   "pair": "interesting-boring",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a colorful birthday party. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The game is interesting. (2) The homework is boring.",
+   "dialogue": [
+    "mimi: The game is interesting.",
+    "bobo: The homework is ___."
+   ],
+   "placeholder": "🎮📝"
+  },
+  {
+   "kind": "story",
+   "file": "story/5-4.png",
+   "size": "1024x768",
+   "pair": "rich-poor",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a colorful birthday party. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) The king is rich. (2) The man is poor.",
+   "dialogue": [
+    "bobo: The king is rich.",
+    "mimi: The man is ___."
+   ],
+   "placeholder": "👑🥺"
+  },
+  {
+   "kind": "story",
+   "file": "story/5-5.png",
+   "size": "1024x768",
+   "pair": "old-young",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a colorful birthday party. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) Grandpa is old. (2) The baby is young.",
+   "dialogue": [
+    "mimi: Grandpa is old.",
+    "bobo: The baby is ___."
+   ],
+   "placeholder": "👴👶"
+  },
+  {
+   "kind": "story",
+   "file": "story/5-6.png",
+   "size": "1024x768",
+   "pair": "right-wrong",
+   "desc": "Comic panel (4:3, full background, no text, leave top 35% calmer for speech bubbles) in a colorful birthday party. Mimi (bunny) and Bobo (bear) are in the scene. Must clearly show BOTH contrasting things: (1) That answer is right. (2) That answer is wrong.",
+   "dialogue": [
+    "bobo: That answer is right!",
+    "mimi: That answer is ___."
+   ],
+   "placeholder": "✅❌"
+  },
+  {
+   "kind": "word",
    "file": "big-small-a.png",
+   "size": "512x512",
    "word": "big/large",
-   "desc": "The elephant is big — draw the scene so the meaning of 'big' is obvious without text",
+   "desc": "The elephant is big — single object scene that makes 'big' obvious",
    "placeholder": "🐘"
   },
   {
+   "kind": "word",
    "file": "big-small-b.png",
+   "size": "512x512",
    "word": "small",
-   "desc": "The mouse is small — draw the scene so the meaning of 'small' is obvious without text",
+   "desc": "The mouse is small — single object scene that makes 'small' obvious",
    "placeholder": "🐭"
   },
   {
+   "kind": "word",
    "file": "huge-tiny-a.png",
+   "size": "512x512",
    "word": "huge",
-   "desc": "The whale is huge — draw the scene so the meaning of 'huge' is obvious without text",
+   "desc": "The whale is huge — single object scene that makes 'huge' obvious",
    "placeholder": "🐋"
   },
   {
+   "kind": "word",
    "file": "huge-tiny-b.png",
+   "size": "512x512",
    "word": "tiny",
-   "desc": "The ant is tiny — draw the scene so the meaning of 'tiny' is obvious without text",
+   "desc": "The ant is tiny — single object scene that makes 'tiny' obvious",
    "placeholder": "🐜"
   },
   {
+   "kind": "word",
    "file": "tall-short-a.png",
+   "size": "512x512",
    "word": "tall",
-   "desc": "The giraffe is tall — draw the scene so the meaning of 'tall' is obvious without text",
+   "desc": "The giraffe is tall — single object scene that makes 'tall' obvious",
    "placeholder": "🦒"
   },
   {
+   "kind": "word",
    "file": "tall-short-b.png",
+   "size": "512x512",
    "word": "short",
-   "desc": "The dog is short — draw the scene so the meaning of 'short' is obvious without text",
+   "desc": "The dog is short — single object scene that makes 'short' obvious",
    "placeholder": "🐕"
   },
   {
+   "kind": "word",
    "file": "long-short-a.png",
+   "size": "512x512",
    "word": "long",
-   "desc": "The snake is long — draw the scene so the meaning of 'long' is obvious without text",
+   "desc": "The snake is long — single object scene that makes 'long' obvious",
    "placeholder": "🐍"
   },
   {
+   "kind": "word",
    "file": "long-short-b.png",
+   "size": "512x512",
    "word": "short",
-   "desc": "The crayon is short — draw the scene so the meaning of 'short' is obvious without text",
+   "desc": "The crayon is short — single object scene that makes 'short' obvious",
    "placeholder": "🖍️"
   },
   {
+   "kind": "word",
    "file": "thick-thin-a.png",
+   "size": "512x512",
    "word": "thick",
-   "desc": "The book is thick — draw the scene so the meaning of 'thick' is obvious without text",
+   "desc": "The book is thick — single object scene that makes 'thick' obvious",
    "placeholder": "📚"
   },
   {
+   "kind": "word",
    "file": "thick-thin-b.png",
+   "size": "512x512",
    "word": "thin",
-   "desc": "The paper is thin — draw the scene so the meaning of 'thin' is obvious without text",
+   "desc": "The paper is thin — single object scene that makes 'thin' obvious",
    "placeholder": "📄"
   },
   {
+   "kind": "word",
    "file": "wide-narrow-a.png",
+   "size": "512x512",
    "word": "wide",
-   "desc": "The road is wide — draw the scene so the meaning of 'wide' is obvious without text",
+   "desc": "The road is wide — single object scene that makes 'wide' obvious",
    "placeholder": "🛣️"
   },
   {
+   "kind": "word",
    "file": "wide-narrow-b.png",
+   "size": "512x512",
    "word": "narrow",
-   "desc": "The bridge is narrow — draw the scene so the meaning of 'narrow' is obvious without text",
+   "desc": "The bridge is narrow — single object scene that makes 'narrow' obvious",
    "placeholder": "🌉"
   },
   {
+   "kind": "word",
    "file": "heavy-light-a.png",
+   "size": "512x512",
    "word": "heavy",
-   "desc": "The rock is heavy — draw the scene so the meaning of 'heavy' is obvious without text",
+   "desc": "The rock is heavy — single object scene that makes 'heavy' obvious",
    "placeholder": "🪨"
   },
   {
+   "kind": "word",
    "file": "heavy-light-b.png",
+   "size": "512x512",
    "word": "light",
-   "desc": "The feather is light — draw the scene so the meaning of 'light' is obvious without text",
+   "desc": "The feather is light — single object scene that makes 'light' obvious",
    "placeholder": "🪶"
   },
   {
+   "kind": "word",
    "file": "full-empty-a.png",
+   "size": "512x512",
    "word": "full",
-   "desc": "The cup is full — draw the scene so the meaning of 'full' is obvious without text",
+   "desc": "The cup is full — single object scene that makes 'full' obvious",
    "placeholder": "🥛"
   },
   {
+   "kind": "word",
    "file": "full-empty-b.png",
+   "size": "512x512",
    "word": "empty",
-   "desc": "The box is empty — draw the scene so the meaning of 'empty' is obvious without text",
+   "desc": "The box is empty — single object scene that makes 'empty' obvious",
    "placeholder": "📦"
   },
   {
+   "kind": "word",
    "file": "deep-shallow-a.png",
+   "size": "512x512",
    "word": "deep",
-   "desc": "The sea is deep — draw the scene so the meaning of 'deep' is obvious without text",
+   "desc": "The sea is deep — single object scene that makes 'deep' obvious",
    "placeholder": "🌊"
   },
   {
+   "kind": "word",
    "file": "deep-shallow-b.png",
+   "size": "512x512",
    "word": "shallow",
-   "desc": "The puddle is shallow — draw the scene so the meaning of 'shallow' is obvious without text",
+   "desc": "The puddle is shallow — single object scene that makes 'shallow' obvious",
    "placeholder": "💧"
   },
   {
+   "kind": "word",
    "file": "high-low-a.png",
+   "size": "512x512",
    "word": "high",
-   "desc": "The kite is high — draw the scene so the meaning of 'high' is obvious without text",
+   "desc": "The kite is high — single object scene that makes 'high' obvious",
    "placeholder": "🪁"
   },
   {
+   "kind": "word",
    "file": "high-low-b.png",
+   "size": "512x512",
    "word": "low",
-   "desc": "The ball is low — draw the scene so the meaning of 'low' is obvious without text",
+   "desc": "The ball is low — single object scene that makes 'low' obvious",
    "placeholder": "⚽"
   },
   {
+   "kind": "word",
    "file": "alot-some-a.png",
+   "size": "512x512",
    "word": "a lot of",
-   "desc": "I have a lot of candy — draw the scene so the meaning of 'a lot of' is obvious without text",
+   "desc": "I have a lot of candy — single object scene that makes 'a lot of' obvious",
    "placeholder": "🍬"
   },
   {
+   "kind": "word",
    "file": "alot-some-b.png",
+   "size": "512x512",
    "word": "some",
-   "desc": "I have some candy — draw the scene so the meaning of 'some' is obvious without text",
+   "desc": "I have some candy — single object scene that makes 'some' obvious",
    "placeholder": "🍭"
   },
   {
+   "kind": "word",
    "file": "more-less-a.png",
+   "size": "512x512",
    "word": "more",
-   "desc": "I have more juice — draw the scene so the meaning of 'more' is obvious without text",
+   "desc": "I have more juice — single object scene that makes 'more' obvious",
    "placeholder": "🧃"
   },
   {
+   "kind": "word",
    "file": "more-less-b.png",
+   "size": "512x512",
    "word": "less",
-   "desc": "You have less juice — draw the scene so the meaning of 'less' is obvious without text",
+   "desc": "You have less juice — single object scene that makes 'less' obvious",
    "placeholder": "🥤"
   },
   {
+   "kind": "word",
    "file": "fast-slow-a.png",
+   "size": "512x512",
    "word": "fast",
-   "desc": "The rabbit is fast — draw the scene so the meaning of 'fast' is obvious without text",
+   "desc": "The rabbit is fast — single object scene that makes 'fast' obvious",
    "placeholder": "🐇"
   },
   {
+   "kind": "word",
    "file": "fast-slow-b.png",
+   "size": "512x512",
    "word": "slow",
-   "desc": "The turtle is slow — draw the scene so the meaning of 'slow' is obvious without text",
+   "desc": "The turtle is slow — single object scene that makes 'slow' obvious",
    "placeholder": "🐢"
   },
   {
+   "kind": "word",
    "file": "early-late-a.png",
+   "size": "512x512",
    "word": "early",
-   "desc": "I get up early — draw the scene so the meaning of 'early' is obvious without text",
+   "desc": "I get up early — single object scene that makes 'early' obvious",
    "placeholder": "🌅"
   },
   {
+   "kind": "word",
    "file": "early-late-b.png",
+   "size": "512x512",
    "word": "late",
-   "desc": "I go to bed late — draw the scene so the meaning of 'late' is obvious without text",
+   "desc": "I go to bed late — single object scene that makes 'late' obvious",
    "placeholder": "🌙"
   },
   {
+   "kind": "word",
    "file": "far-near-a.png",
+   "size": "512x512",
    "word": "far",
-   "desc": "The moon is far — draw the scene so the meaning of 'far' is obvious without text",
+   "desc": "The moon is far — single object scene that makes 'far' obvious",
    "placeholder": "🌕"
   },
   {
+   "kind": "word",
    "file": "far-near-b.png",
+   "size": "512x512",
    "word": "near",
-   "desc": "The tree is near — draw the scene so the meaning of 'near' is obvious without text",
+   "desc": "The tree is near — single object scene that makes 'near' obvious",
    "placeholder": "🌳"
   },
   {
+   "kind": "word",
    "file": "right-left-a.png",
+   "size": "512x512",
    "word": "right",
-   "desc": "Raise your right hand — draw the scene so the meaning of 'right' is obvious without text",
+   "desc": "Raise your right hand — single object scene that makes 'right' obvious",
    "placeholder": "👉"
   },
   {
+   "kind": "word",
    "file": "right-left-b.png",
+   "size": "512x512",
    "word": "left",
-   "desc": "Raise your left hand — draw the scene so the meaning of 'left' is obvious without text",
+   "desc": "Raise your left hand — single object scene that makes 'left' obvious",
    "placeholder": "👈"
   },
   {
+   "kind": "word",
    "file": "open-closed-a.png",
+   "size": "512x512",
    "word": "open",
-   "desc": "The door is open — draw the scene so the meaning of 'open' is obvious without text",
+   "desc": "The door is open — single object scene that makes 'open' obvious",
    "placeholder": "🚪"
   },
   {
+   "kind": "word",
    "file": "open-closed-b.png",
+   "size": "512x512",
    "word": "closed",
-   "desc": "The window is closed — draw the scene so the meaning of 'closed' is obvious without text",
+   "desc": "The window is closed — single object scene that makes 'closed' obvious",
    "placeholder": "🪟"
   },
   {
+   "kind": "word",
    "file": "tight-loose-a.png",
+   "size": "512x512",
    "word": "tight",
-   "desc": "The belt is tight — draw the scene so the meaning of 'tight' is obvious without text",
+   "desc": "The belt is tight — single object scene that makes 'tight' obvious",
    "placeholder": "🪢"
   },
   {
+   "kind": "word",
    "file": "tight-loose-b.png",
+   "size": "512x512",
    "word": "loose",
-   "desc": "The sock is loose — draw the scene so the meaning of 'loose' is obvious without text",
+   "desc": "The sock is loose — single object scene that makes 'loose' obvious",
    "placeholder": "🧦"
   },
   {
+   "kind": "word",
    "file": "hot-cold-a.png",
+   "size": "512x512",
    "word": "hot",
-   "desc": "The soup is hot — draw the scene so the meaning of 'hot' is obvious without text",
+   "desc": "The soup is hot — single object scene that makes 'hot' obvious",
    "placeholder": "🍲"
   },
   {
+   "kind": "word",
    "file": "hot-cold-b.png",
+   "size": "512x512",
    "word": "cold",
-   "desc": "The ice cream is cold — draw the scene so the meaning of 'cold' is obvious without text",
+   "desc": "The ice cream is cold — single object scene that makes 'cold' obvious",
    "placeholder": "🍦"
   },
   {
+   "kind": "word",
    "file": "wet-dry-a.png",
+   "size": "512x512",
    "word": "wet",
-   "desc": "The dog is wet — draw the scene so the meaning of 'wet' is obvious without text",
+   "desc": "The dog is wet — single object scene that makes 'wet' obvious",
    "placeholder": "🐶"
   },
   {
+   "kind": "word",
    "file": "wet-dry-b.png",
+   "size": "512x512",
    "word": "dry",
-   "desc": "The towel is dry — draw the scene so the meaning of 'dry' is obvious without text",
+   "desc": "The towel is dry — single object scene that makes 'dry' obvious",
    "placeholder": "🧺"
   },
   {
+   "kind": "word",
    "file": "clean-dirty-a.png",
+   "size": "512x512",
    "word": "clean",
-   "desc": "My hands are clean — draw the scene so the meaning of 'clean' is obvious without text",
+   "desc": "My hands are clean — single object scene that makes 'clean' obvious",
    "placeholder": "🧼"
   },
   {
+   "kind": "word",
    "file": "clean-dirty-b.png",
+   "size": "512x512",
    "word": "dirty",
-   "desc": "My shoes are dirty — draw the scene so the meaning of 'dirty' is obvious without text",
+   "desc": "My shoes are dirty — single object scene that makes 'dirty' obvious",
    "placeholder": "🥾"
   },
   {
+   "kind": "word",
    "file": "dark-bright-a.png",
+   "size": "512x512",
    "word": "dark",
-   "desc": "The night is dark — draw the scene so the meaning of 'dark' is obvious without text",
+   "desc": "The night is dark — single object scene that makes 'dark' obvious",
    "placeholder": "🌃"
   },
   {
+   "kind": "word",
    "file": "dark-bright-b.png",
+   "size": "512x512",
    "word": "bright/light",
-   "desc": "The sun is bright — draw the scene so the meaning of 'bright' is obvious without text",
+   "desc": "The sun is bright — single object scene that makes 'bright' obvious",
    "placeholder": "☀️"
   },
   {
+   "kind": "word",
    "file": "loud-quiet-a.png",
+   "size": "512x512",
    "word": "loud",
-   "desc": "The drum is loud — draw the scene so the meaning of 'loud' is obvious without text",
+   "desc": "The drum is loud — single object scene that makes 'loud' obvious",
    "placeholder": "🥁"
   },
   {
+   "kind": "word",
    "file": "loud-quiet-b.png",
+   "size": "512x512",
    "word": "quiet",
-   "desc": "The library is quiet — draw the scene so the meaning of 'quiet' is obvious without text",
+   "desc": "The library is quiet — single object scene that makes 'quiet' obvious",
    "placeholder": "🤫"
   },
   {
+   "kind": "word",
    "file": "old-new-a.png",
+   "size": "512x512",
    "word": "old",
-   "desc": "The shoes are old — draw the scene so the meaning of 'old' is obvious without text",
+   "desc": "The shoes are old — single object scene that makes 'old' obvious",
    "placeholder": "👟"
   },
   {
+   "kind": "word",
    "file": "old-new-b.png",
+   "size": "512x512",
    "word": "new",
-   "desc": "The bag is new — draw the scene so the meaning of 'new' is obvious without text",
+   "desc": "The bag is new — single object scene that makes 'new' obvious",
    "placeholder": "🎒"
   },
   {
+   "kind": "word",
    "file": "happy-sad-a.png",
+   "size": "512x512",
    "word": "happy",
-   "desc": "I am happy — draw the scene so the meaning of 'happy' is obvious without text",
+   "desc": "I am happy — single object scene that makes 'happy' obvious",
    "placeholder": "😀"
   },
   {
+   "kind": "word",
    "file": "happy-sad-b.png",
+   "size": "512x512",
    "word": "sad",
-   "desc": "I am sad — draw the scene so the meaning of 'sad' is obvious without text",
+   "desc": "I am sad — single object scene that makes 'sad' obvious",
    "placeholder": "😢"
   },
   {
+   "kind": "word",
    "file": "great-terrible-a.png",
+   "size": "512x512",
    "word": "great",
-   "desc": "The movie is great — draw the scene so the meaning of 'great' is obvious without text",
+   "desc": "The movie is great — single object scene that makes 'great' obvious",
    "placeholder": "🎬"
   },
   {
+   "kind": "word",
    "file": "great-terrible-b.png",
+   "size": "512x512",
    "word": "terrible",
-   "desc": "The storm is terrible — draw the scene so the meaning of 'terrible' is obvious without text",
+   "desc": "The storm is terrible — single object scene that makes 'terrible' obvious",
    "placeholder": "⛈️"
   },
   {
+   "kind": "word",
    "file": "interesting-boring-a.png",
+   "size": "512x512",
    "word": "interesting",
-   "desc": "The game is interesting — draw the scene so the meaning of 'interesting' is obvious without text",
+   "desc": "The game is interesting — single object scene that makes 'interesting' obvious",
    "placeholder": "🎮"
   },
   {
+   "kind": "word",
    "file": "interesting-boring-b.png",
+   "size": "512x512",
    "word": "boring",
-   "desc": "The homework is boring — draw the scene so the meaning of 'boring' is obvious without text",
+   "desc": "The homework is boring — single object scene that makes 'boring' obvious",
    "placeholder": "📝"
   },
   {
+   "kind": "word",
    "file": "rich-poor-a.png",
+   "size": "512x512",
    "word": "rich",
-   "desc": "The king is rich — draw the scene so the meaning of 'rich' is obvious without text",
+   "desc": "The king is rich — single object scene that makes 'rich' obvious",
    "placeholder": "👑"
   },
   {
+   "kind": "word",
    "file": "rich-poor-b.png",
+   "size": "512x512",
    "word": "poor",
-   "desc": "The man is poor — draw the scene so the meaning of 'poor' is obvious without text",
+   "desc": "The man is poor — single object scene that makes 'poor' obvious",
    "placeholder": "🥺"
   },
   {
+   "kind": "word",
    "file": "old-young-a.png",
+   "size": "512x512",
    "word": "old",
-   "desc": "Grandpa is old — draw the scene so the meaning of 'old' is obvious without text",
+   "desc": "Grandpa is old — single object scene that makes 'old' obvious",
    "placeholder": "👴"
   },
   {
+   "kind": "word",
    "file": "old-young-b.png",
+   "size": "512x512",
    "word": "young",
-   "desc": "The baby is young — draw the scene so the meaning of 'young' is obvious without text",
+   "desc": "The baby is young — single object scene that makes 'young' obvious",
    "placeholder": "👶"
   },
   {
+   "kind": "word",
    "file": "right-wrong-a.png",
+   "size": "512x512",
    "word": "right",
-   "desc": "That answer is right — draw the scene so the meaning of 'right' is obvious without text",
+   "desc": "That answer is right — single object scene that makes 'right' obvious",
    "placeholder": "✅"
   },
   {
+   "kind": "word",
    "file": "right-wrong-b.png",
+   "size": "512x512",
    "word": "wrong",
-   "desc": "That answer is wrong — draw the scene so the meaning of 'wrong' is obvious without text",
+   "desc": "That answer is wrong — single object scene that makes 'wrong' obvious",
    "placeholder": "❌"
   }
  ]

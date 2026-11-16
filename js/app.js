@@ -63,6 +63,9 @@
   const mimi = (mood = "") =>
     `<span class="pic mimi ${mood}"><span class="emo">🐰</span>` +
     `<img alt="" src="assets/img/mimi${mood ? "-" + mood : ""}.png" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></span>`;
+  const char = (who, mood = "") => who === "bobo"
+    ? `<span class="pic mimi bobo"><span class="emo">🐻</span><img alt="" src="assets/img/bobo.png" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></span>`
+    : mimi(mood);
   const stars = (n, max = 3) => "⭐".repeat(n) + "<span class='dim'>" + "☆".repeat(max - n) + "</span>";
 
   // ---------- 화면 틀 ----------
@@ -83,8 +86,8 @@
         ${UNITS.map(u => `
           <button class="card unit" data-u="${u.id}" style="--c:${u.color}">
             <span class="big-emoji">${u.emoji}</span>
-            <b>Unit ${u.id}</b><span>${u.name}</span><small>${u.ko}</small>
-            <span class="stars">${stars(getStars("chat" + u.id))}</span>
+            <b>Book ${u.id}</b><span>${STORIES[u.id - 1].title}</span><small>${STORIES[u.id - 1].ko}</small>
+            <span class="stars">${stars(getStars("story" + u.id))}</span>
           </button>`).join("")}
       </div>
       <button class="btn test" id="test">📝 수행평가 연습 <small>7단어 · 반대말 말하기</small>
@@ -99,11 +102,88 @@
     show(`
       <h2 class="h">${U.emoji} Unit ${u} · ${U.name} <small>${U.ko}</small></h2>
       <div class="grid menu">
+        <button class="card feature" data-m="story">📖<b>동화책 읽기</b><small>${STORIES[u - 1].title} · ${STORIES[u - 1].ko}</small></button>
         <button class="card" data-m="cards">🃏<b>단어 카드</b><small>그림 보고 소리 듣기</small></button>
         <button class="card" data-m="chat">💬<b>미미와 대화</b><small>반대말 고르기</small></button>
         <button class="card" data-m="say">🗣️<b>반대말 말하기</b><small>시험처럼 연습</small></button>
       </div>`, { t: `Unit ${u}`, onBack: home });
-    on("[data-m]", el => ({ cards, chat, say: sayGame }[el.dataset.m])(u));
+    on("[data-m]", el => ({ story, cards, chat, say: sayGame }[el.dataset.m])(u));
+  }
+
+
+  // ---------- 동화책(만화) 읽기 ----------
+  function story(u, page = -1) {
+    const S = STORIES[u - 1], U = UNITS[u - 1], N = S.panels.length;
+    const run = story.run && story.run.u === u ? story.run : (story.run = { u, first: 0 });
+    if (page === -1) { run.first = 0; return cover(); }
+    const bub = (who, html, extra = "") =>
+      `<div class="row ${who === "bobo" ? "right" : ""}">${char(who, extra)}<div class="bubble ${who}">${html}</div></div>`;
+    const scene = (pn, p) => `<div class="scene" style="--c:${U.color}"><span class="emo">${pn.scene}</span>
+      <img alt="" src="assets/img/story/${u}-${page + 1}.png" onload="this.parentNode.classList.add('has')" onerror="this.remove()">
+      <i class="pg">${page + 1}</i></div>`;
+
+    function cover() {
+      show(`<section class="book cover" style="--c:${U.color}">
+        <div class="scene big" style="--c:${U.color}"><span class="emo">${S.cover}</span>
+          <img alt="" src="assets/img/story/${u}-cover.png" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></div>
+        <h2>${S.title}</h2><p>${S.ko}</p>
+        <div class="who">${char("mimi")}${char("bobo")}</div>
+        <button class="btn big" id="go">📖 읽기 시작</button></section>`, { t: `Book ${u}`, onBack: () => unit(u) });
+      speak(S.title);
+      app.querySelector("#go").onclick = () => story(u, 0);
+    }
+    if (page >= N) return theEnd();
+    const p = PAIRS.find(x => x.id === S.panels[page].pair), pn = S.panels[page];
+    const [l1, l2] = pn.lines, ok = accepted(p.a);
+    const hi = (t) => t.replace(/___/, "<mark>___</mark>");
+    let tries = 0;
+    show(`<section class="book">
+        <div class="progress"><i style="width:${page / N * 100}%"></i></div>
+        ${scene(pn)}
+        <div class="talk" id="talk">${bub(l1[0], l1[1])}</div>
+        <div class="opts" id="ctl"><button class="btn" id="more">▶ 다음 말풍선</button></div>
+      </section>`, { t: `${S.title} · ${page + 1}/${N}`, onBack: () => unit(u) });
+    speak(l1[1]);
+    app.querySelector(".talk .bubble").onclick = () => speak(l1[1]);
+    app.querySelector("#more").onclick = () => {
+      const pool = shuffle(allSides().filter(s => s.w.every(w => !ok.has(w) && !p.a.w.includes(w))));
+      const wrong = []; const seen = new Set();
+      for (const s of pool) if (!seen.has(s.w[0]) && wrong.length < 2) { seen.add(s.w[0]); wrong.push(s.w[0]); }
+      const opts = shuffle([p.b.w[0], ...wrong]);
+      const talk = app.querySelector("#talk");
+      talk.insertAdjacentHTML("beforeend", bub(l2[0], hi(l2[1])));
+      talk.lastElementChild.querySelector(".bubble").onclick = () => speak(l2[1]);
+      speak(l2[1]);
+      const ctl = app.querySelector("#ctl");
+      ctl.innerHTML = opts.map(o => `<button class="opt" data-o="${o}">${o}</button>`).join("");
+      ctl.querySelectorAll(".opt").forEach(b => b.onclick = () => {
+        if (b.disabled) return; tries++;
+        const w = b.dataset.o, mk = talk.lastElementChild.querySelector("mark");
+        if (ok.has(w)) {
+          beep(true); if (tries === 1) run.first++;
+          mk.textContent = w; mk.className = "right-ans";
+          talk.insertAdjacentHTML("beforeend", bub("mimi", `Yes! 🎉 <b>${label(p.a)}</b> ↔ <b>${label(p.b)}</b>`, "happy"));
+          speak(l2[1].replace("___", w));
+          ctl.innerHTML = `<button class="btn" id="nx">${page === N - 1 ? "끝 ✔" : "다음 페이지 ▶"}</button>`;
+          ctl.querySelector("#nx").onclick = () => story(u, page + 1);
+        } else { beep(false); b.disabled = true; b.classList.add("bad"); mk.textContent = w; mk.className = "wrong-ans"; setTimeout(() => { mk.textContent = "___"; mk.className = ""; }, 700); }
+      });
+    };
+
+    function theEnd() {
+      const n = run.first, s = n >= N - 1 ? 3 : n >= N * 0.6 ? 2 : 1;
+      saveStars("story" + u, s);
+      show(`<section class="book cover"><h2>The End 🎉</h2>
+        <div class="who">${char("mimi", "happy")}${char("bobo")}</div>
+        <div class="bigstars">${stars(s)}</div>
+        <p>${N}쪽 중 ${n}쪽을 한 번에 맞혔어요!</p>
+        <div class="nav"><button class="btn" id="re">다시 읽기</button>
+        ${u < STORIES.length ? `<button class="btn good" id="nb">다음 책 ▶</button>` : `<button class="btn good" id="hm">홈</button>`}</div></section>`,
+        { t: "The End", onBack: () => unit(u) });
+      app.querySelector("#re").onclick = () => story(u, -1);
+      const nb = app.querySelector("#nb"); if (nb) nb.onclick = () => story(u + 1, -1);
+      const hm = app.querySelector("#hm"); if (hm) hm.onclick = home;
+    }
   }
 
   // ---------- 단어 카드 ----------
