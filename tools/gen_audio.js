@@ -9,8 +9,8 @@ const m = { exports: {} }; new Function("module", src)(m);
 const { PAIRS, STORIES } = m.exports;
 const slug = t => t.toLowerCase().replace(/___/g, " blank ").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); // app.js 와 같은 규칙
 const blank = side => side.s.replace(new RegExp(side.w[0], "i"), "___");
-// 목소리: 엄마·진행(기본)=Samantha, 아이(Mimi)=Shelley. 바꾸려면 아래 이름만 고치고 다시 실행(기존 파일은 지우고 만들 것)
-const VOICES = { default: "Samantha", mimi: "Shelley" };
+// 목소리: 엄마·진행(기본)=Samantha, 아이(Mimi)=Sandy. 바꾸려면 아래 이름만 고치고 다시 실행(기존 파일은 지우고 만들 것)
+const VOICES = { default: "Samantha", mimi: "Sandy" };
 const texts = new Set();           // 기본 목소리(엄마/진행)
 const mimiTexts = new Set();       // 아이(Mimi) 목소리 — 파일명 앞에 mimi_ 가 붙음
 for (const p of PAIRS) for (const side of [p.a, p.b]) { side.w.forEach(w => texts.add(w)); texts.add(side.s); texts.add(blank(side)); }
