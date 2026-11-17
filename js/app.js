@@ -47,12 +47,14 @@
     try { player.onended = player.onerror = null; player.pause(); } catch (e) {}
     try { if (window.speechSynthesis && (speechSynthesis.speaking || speechSynthesis.pending)) speechSynthesis.cancel(); } catch (e) {}
   };
-  // speak("문장") 또는 speak(["단어", "문장"]) — 여러 개면 차례로 읽음
+  // speak("문장") / speak(["단어", "문장"]) / 말하는 사람 지정: speak([["문장", "mimi"]]) — 여러 개면 차례로 읽음
+  // (주의: speak(["문장", "mimi"])는 두 문장으로 읽힘. 사람 지정은 항상 [문장, 사람] 짝으로 감싸기)
   const speak = (parts) => {
     parts = [].concat(parts); const my = ++token; stopSound();
     (function next(i) {
       if (i >= parts.length || my !== token) return;
-      const t = parts[i], k = slug(t), after = () => next(i + 1);
+      const part = parts[i], t = [].concat(part)[0], who = Array.isArray(part) ? part[1] : "";   // ["문장", "mimi"] 이면 아이 목소리
+      const k = (who === "mimi" ? "mimi_" : "") + slug(t), after = () => next(i + 1);
       if (AUDIO.has(k)) {
         player.onended = after; player.onerror = () => { if (my === token) tts(t, after); };
         player.src = `${BASE}audio/${k}.m4a`;
@@ -174,8 +176,8 @@
         <div class="talk" id="talk">${first.map(l => bub(l[0], l[1])).join("")}</div>
         <div class="opts" id="ctl"><button class="btn" id="more">▶ 다음 말풍선</button></div>
       </section>`, { t: `${S.title} · ${page + 1}/${N}`, onBack: () => unit(u) });
-    speak(first.map(l => l[1]));
-    app.querySelectorAll(".talk .bubble").forEach((b, i) => b.onclick = () => speak(first[i][1]));
+    speak(first.map(l => [l[1], l[0]]));
+    app.querySelectorAll(".talk .bubble").forEach((b, i) => b.onclick = () => speak([[first[i][1], first[i][0]]]));
     app.querySelector("#more").onclick = () => {
       const pool = shuffle(allSides().filter(s => s.w.every(w => !ok.has(w) && !p.a.w.includes(w))));
       const wrong = []; const seen = new Set();
@@ -183,8 +185,8 @@
       const opts = shuffle([p.b.w[0], ...wrong]);
       const talk = app.querySelector("#talk");
       talk.insertAdjacentHTML("beforeend", bub(l2[0], hi(l2[1])));
-      talk.lastElementChild.querySelector(".bubble").onclick = () => speak(l2[1]);
-      speak(l2[1]);
+      talk.lastElementChild.querySelector(".bubble").onclick = () => speak([[l2[1], l2[0]]]);
+      speak([[l2[1], l2[0]]]);
       const ctl = app.querySelector("#ctl");
       ctl.innerHTML = opts.map(o => `<button class="opt" data-o="${o}">${o}</button>`).join("");
       ctl.querySelectorAll(".opt").forEach(b => b.onclick = () => {
@@ -194,7 +196,7 @@
           beep(true); if (tries === 1) run.first++;
           mk.textContent = w; mk.className = "right-ans";
           talk.insertAdjacentHTML("beforeend", bub("mom", `Yes! 🎉 <b>${label(p.a)}</b> ↔ <b>${label(p.b)}</b>`, "happy"));
-          speak(l2[1].replace("___", w));
+          speak([[l2[1].replace("___", w), l2[0]]]);
           ctl.innerHTML = `<button class="btn" id="nx">${page === N - 1 ? "끝 ✔" : "다음 페이지 ▶"}</button>`;
           ctl.querySelector("#nx").onclick = () => story(u, page + 1);
         } else { beep(false); b.disabled = true; b.classList.add("bad"); mk.textContent = w; mk.className = "wrong-ans"; setTimeout(() => { mk.textContent = "___"; mk.className = ""; }, 700); }
