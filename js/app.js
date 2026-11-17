@@ -17,19 +17,48 @@
   const getStars = (key) => (store.get().stars || {})[key] || 0;
 
   // ---------- 소리 ----------
-  let voice = null;
+  // 1순위: 미리 녹음한 음성(courses/<id>/audio/*.m4a) — 기기 설정과 상관없이 나옴
+  // 2순위: 기기 음성합성(speechSynthesis) — 녹음이 없는 문장용
+  const AUDIO = new Set(window.AUDIO_KEYS || []);
+  const slug = (t) => t.toLowerCase().replace(/___/g, " blank ").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const player = new Audio(); player.preload = "auto";
+  let voice = null, token = 0, unlocked = false;
   const pickVoice = () => {
     const vs = (window.speechSynthesis && speechSynthesis.getVoices()) || [];
     voice = vs.find(v => /en[-_]US/i.test(v.lang) && /samantha|ava|allison|karen/i.test(v.name)) ||
             vs.find(v => /en[-_]US/i.test(v.lang)) || vs.find(v => /^en/i.test(v.lang)) || null;
   };
   if (window.speechSynthesis) { pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
-  const speak = (text) => {
-    if (!window.speechSynthesis) return;
-    speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text.replace("___", "blank"));
+  // iOS/iPad는 첫 터치 때 소리 재생을 허용(잠금 해제)해 두어야 이후 자동 재생이 됨
+  const unlock = () => {
+    if (unlocked) return; unlocked = true;
+    try { player.src = "data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA="; const p = player.play(); if (p && p.catch) p.catch(() => {}); } catch (e) {}
+    try { if (window.speechSynthesis) { const u = new SpeechSynthesisUtterance(" "); u.volume = 0; speechSynthesis.speak(u); } } catch (e) {}
+  };
+  ["pointerdown", "touchend", "click"].forEach(ev => document.addEventListener(ev, unlock, { capture: true, passive: true }));
+  const tts = (text, done) => {
+    if (!window.speechSynthesis) return done();
+    const u = new SpeechSynthesisUtterance(text.replace(/___/g, "..."));
     u.lang = "en-US"; u.rate = 0.8; u.pitch = 1.1; if (voice) u.voice = voice;
+    u.onend = u.onerror = () => done();
     speechSynthesis.speak(u);
+  };
+  const stopSound = () => {
+    try { player.onended = player.onerror = null; player.pause(); } catch (e) {}
+    try { if (window.speechSynthesis && (speechSynthesis.speaking || speechSynthesis.pending)) speechSynthesis.cancel(); } catch (e) {}
+  };
+  // speak("문장") 또는 speak(["단어", "문장"]) — 여러 개면 차례로 읽음
+  const speak = (parts) => {
+    parts = [].concat(parts); const my = ++token; stopSound();
+    (function next(i) {
+      if (i >= parts.length || my !== token) return;
+      const t = parts[i], k = slug(t), after = () => next(i + 1);
+      if (AUDIO.has(k)) {
+        player.onended = after; player.onerror = () => { if (my === token) tts(t, after); };
+        player.src = `${BASE}audio/${k}.m4a`;
+        const p = player.play(); if (p && p.catch) p.catch(() => { if (my === token) tts(t, after); });
+      } else tts(t, after);
+    })(0);
   };
   const beep = (ok) => {
     try {
@@ -145,7 +174,7 @@
         <div class="talk" id="talk">${first.map(l => bub(l[0], l[1])).join("")}</div>
         <div class="opts" id="ctl"><button class="btn" id="more">▶ 다음 말풍선</button></div>
       </section>`, { t: `${S.title} · ${page + 1}/${N}`, onBack: () => unit(u) });
-    speak(first.map(l => l[1]).join(" "));
+    speak(first.map(l => l[1]));
     app.querySelectorAll(".talk .bubble").forEach((b, i) => b.onclick = () => speak(first[i][1]));
     app.querySelector("#more").onclick = () => {
       const pool = shuffle(allSides().filter(s => s.w.every(w => !ok.has(w) && !p.a.w.includes(w))));
@@ -199,8 +228,8 @@
         <span>${i + 1} / ${ps.length}</span>
         <button class="btn" id="next">${i === ps.length - 1 ? "끝 ✔" : "▶"}</button>
       </div>`, { t: "단어 카드", onBack: () => unit(u) });
-    on("[data-say]", el => { const [w, s] = el.dataset.say.split("|"); speak(w + ". " + s); });
-    speak(p.a.w[0] + ". " + p.b.w[0]);
+    on("[data-say]", el => { const [w, s] = el.dataset.say.split("|"); speak([w, s]); });
+    speak([p.a.w[0], p.b.w[0]]);
     app.querySelector("#prev").onclick = () => cards(u, i - 1);
     app.querySelector("#next").onclick = () => (i === ps.length - 1 ? unit(u) : cards(u, i + 1));
   }
@@ -228,7 +257,7 @@
         </div>
         <div class="opts">${opts.map(o => `<button class="opt" data-o="${o}">${o}</button>`).join("")}</div>`,
         { t: `Unit ${u} 대화`, onBack: () => unit(u) });
-      speak(it.me.s + " ... " + blank(it.other));
+      speak([it.me.s, blank(it.other)]);
       const log = app.querySelector("#log");
       const add = (cls, html) => { log.insertAdjacentHTML("beforeend", `<div class="row ${cls}">${cls === "me" ? "" : mimi(cls === "oops" ? "oops" : "happy")}<div class="bubble ${cls}">${html}</div></div>`); log.scrollTop = log.scrollHeight; };
       on(".opt", el => {
