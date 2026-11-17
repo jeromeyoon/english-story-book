@@ -22,8 +22,8 @@ button { font: inherit; color: inherit; border: 0; cursor: pointer; min-height: 
 /* 그림/이모지 */
 .pic { position: relative; display: inline-grid; place-items: center; width: 64px; height: 64px; vertical-align: middle; }
 .pic .emo { font-size: 48px; line-height: 1; }
-.pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: none; }
-.pic.has img { display: block; } .pic.has .emo { visibility: hidden; }
+.pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.pic .emo { visibility: hidden; } .pic.fb .emo { visibility: visible; }
 .pic.sm { width: 44px; height: 44px; } .pic.sm .emo { font-size: 34px; }
 .pic.lg { width: clamp(120px, 22vmin, 200px); height: clamp(120px, 22vmin, 200px); } .pic.lg .emo { font-size: clamp(84px, 15vmin, 140px); }
 .pic.mimi { width: 80px; height: 80px; flex: none; } .pic.mimi .emo { font-size: 60px; }
@@ -88,8 +88,8 @@ mark { background: #fff1a6; padding: 0 6px; border-radius: 8px; font-weight: 700
 .book { display: flex; flex-direction: column; gap: 14px; }
 .scene { position: relative; width: 100%; aspect-ratio: 4 / 3; max-height: 46vh; border-radius: 26px; border: 6px solid var(--ink); background: linear-gradient(160deg, color-mix(in srgb, var(--c) 35%, #fff), #fff 80%); display: grid; place-items: center; overflow: hidden; box-shadow: 0 8px 0 rgba(0,0,0,.1); margin: 0 auto; }
 .scene .emo { font-size: clamp(70px, 16vmin, 150px); letter-spacing: 8px; }
-.scene img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: none; }
-.scene.has img { display: block; } .scene.has .emo { visibility: hidden; }
+.scene img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.scene .emo { visibility: hidden; } .scene.fb .emo { visibility: visible; }
 .scene .pg { position: absolute; left: 10px; top: 8px; background: var(--ink); color: #fff; border-radius: 50%; width: 36px; height: 36px; display: grid; place-items: center; font-style: normal; font-size: .8em; }
 .scene.big { max-height: 40vh; } .scene.big .emo { font-size: clamp(90px, 22vmin, 190px); }
 .talk { display: flex; flex-direction: column; gap: 12px; }

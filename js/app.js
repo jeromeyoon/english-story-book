@@ -59,12 +59,12 @@
   // 그림: 파일이 있으면 그림, 없으면 이모지
   const pic = (side, cls = "") =>
     `<span class="pic ${cls}"><span class="emo">${side.e}</span>` +
-    `<img alt="" src="assets/img/${side.pic}.png" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></span>`;
+    `<img alt="" src="assets/img/${side.pic}.png" onerror="this.parentNode.classList.add('fb');this.remove()"></span>`;
   const mimi = (mood = "") =>
     `<span class="pic mimi ${mood}"><span class="emo">🐰</span>` +
-    `<img alt="" src="assets/img/mimi${mood ? "-" + mood : ""}.png" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></span>`;
+    `<img alt="" src="assets/img/mimi${mood ? "-" + mood : ""}.png" onerror="this.parentNode.classList.add('fb');this.remove()"></span>`;
   const char = (who, mood = "") => who === "mom"
-    ? `<span class="pic mimi mom"><span class="emo">🐇</span><img alt="" src="assets/img/mom.png" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></span>`
+    ? `<span class="pic mimi mom"><span class="emo">🐇</span><img alt="" src="assets/img/mom.png" onerror="this.parentNode.classList.add('fb');this.remove()"></span>`
     : mimi(mood);
   const stars = (n, max = 3) => "⭐".repeat(n) + "<span class='dim'>" + "☆".repeat(max - n) + "</span>";
 
@@ -119,13 +119,13 @@
     const bub = (who, html, extra = "") =>
       `<div class="row ${who === "mimi" ? "right" : ""}">${char(who, extra)}<div class="bubble ${who}">${html}</div></div>`;
     const scene = (pn, p) => `<div class="scene" style="--c:${U.color}"><span class="emo">${pn.scene}</span>
-      <img alt="" src="assets/img/story/${u}-${page + 1}.jpg" onload="this.parentNode.classList.add('has')" onerror="this.remove()">
+      <img alt="" src="assets/img/story/${u}-${page + 1}.jpg" onerror="this.parentNode.classList.add('fb');this.remove()">
       <i class="pg">${page + 1}</i></div>`;
 
     function cover() {
       show(`<section class="book cover" style="--c:${U.color}">
         <div class="scene big" style="--c:${U.color}"><span class="emo">${S.cover}</span>
-          <img alt="" src="assets/img/story/${u}-cover.jpg" onload="this.parentNode.classList.add('has')" onerror="this.remove()"></div>
+          <img alt="" src="assets/img/story/${u}-cover.jpg" onerror="this.parentNode.classList.add('fb');this.remove()"></div>
         <h2>${S.title}</h2><p>${S.ko}</p>
         <div class="who">${char("mom")}${char("mimi")}</div>
         <button class="btn big" id="go">📖 읽기 시작</button></section>`, { t: `Book ${u}`, onBack: () => unit(u) });
@@ -134,6 +134,7 @@
     }
     if (page >= N) return theEnd();
     const p = PAIRS.find(x => x.id === S.panels[page].pair), pn = S.panels[page];
+    [page + 1, page + 2].forEach(n => { if (n <= N) (new Image()).src = `assets/img/story/${u}-${n}.jpg`; });
     const l2 = pn.lines[pn.lines.length - 1], first = pn.lines.slice(0, -1), ok = accepted(p.a);
     const hi = (t) => t.replace(/___/, "<mark>___</mark>");
     let tries = 0;
