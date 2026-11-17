@@ -1,6 +1,6 @@
 {
-  "name": "Opposite Friends",
-  "short_name": "Opposites",
+  "name": "영어 그림책",
+  "short_name": "영어그림책",
   "start_url": "./index.html",
   "display": "standalone",
   "orientation": "any",

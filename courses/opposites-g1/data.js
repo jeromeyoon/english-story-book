@@ -1,4 +1,4 @@
-// 단어 데이터 (대광초 1학년 수행평가: Opposite Pairs 30쌍, Practice Book p.46~55)
+// 단어 데이터 (1학년 영어 반대말 Opposite Pairs 30쌍)
 // 형식: [id, unit, [영어단어들], 예문, 이모지(임시그림), 뜻, ...반대쪽 동일]
 // - 같은 단어가 여러 쌍에 나오면(short, light, old, right) 앱이 자동으로 모든 정답을 인정합니다.
 // - 그림은 assets/img/<id>-a.png / <id>-b.png 가 있으면 이모지 대신 자동 표시됩니다.
