@@ -26,7 +26,7 @@ for (const S of STORIES) {
   });
 }
 // 날짜별 문장 교재: 문장마다 장면 1장 (story/d<Day>-<번호>.png)
-for (const D of DAYS) D.sentences.forEach((x, i) => items.push({ kind: "story", file: `story/d${D.day}-${i + 1}.png`, size: "1024x768",
+for (const D of DAYS) D.sentences.forEach((x, i) => x.scene && items.push({ kind: "story", file: `story/d${D.day}-${i + 1}.png`, size: "1024x768",
   desc: `Comic panel (4:3, full background, no text, keep top 30% calm) set in ${D.setting}. Mimi (child bunny) and, if natural, Mom bunny. Show this sentence clearly: ${x.scene}`,
   dialogue: [x.en + " (" + x.ko + ")"], placeholder: x.emoji }));
 for (const p of PAIRS) for (const s of ["a", "b"]) {

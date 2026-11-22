@@ -28,8 +28,9 @@
   const byDay = (n) => ALL.filter((x) => x.day === n);
   const stars = (n, max = 3) => "⭐".repeat(n) + "<span class='dim'>" + "☆".repeat(max - n) + "</span>";
 
-  const scene = (x, cls = "") =>
-    `<div class="scene ${cls}" style="--c:${x.color}"><span class="emo">${x.emoji}</span>` +
+  const scene = (x, cls = "") => !x.scene
+    ? `<div class="scene ${cls} fb" style="--c:${x.color}"><span class="emo">${x.emoji}</span></div>`   // 그림 없는 문장: 이모지 카드
+    : `<div class="scene ${cls}" style="--c:${x.color}"><span class="emo">${x.emoji}</span>` +
     `<img alt="" src="${BASE}img/story/d${x.day}-${x.i + 1}.jpg" onerror="this.parentNode.classList.add('fb');this.remove()"></div>`;
   const mimi = (mood = "") =>
     `<span class="pic mimi ${mood}"><span class="emo">🐰</span>` +
