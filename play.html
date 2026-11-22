@@ -28,8 +28,10 @@
     var c = COURSES.filter(function (x) { return x.id === id; })[0] || COURSES[0];
     window.COURSE = c; window.COURSE_ID = c.id; window.COURSE_BASE = "courses/" + c.id + "/";
     document.title = c.title;
-    ["data.js", "story.js", "audio.js"].forEach(function (f) { document.write('<script src="' + window.COURSE_BASE + f + '"><\/script>'); });
-    document.write('<script src="js/app.js"><\/script>');
+    var daily = c.type === "daily";   // daily = 날짜별 문장 외우기 교재, 그 외 = 동화 교재
+    (daily ? ["data.js", "audio.js"] : ["data.js", "story.js", "audio.js"]).forEach(function (f) { document.write('<script src="' + window.COURSE_BASE + f + '"><\/script>'); });
+    document.write('<script src="js/sound.js"><\/script>');
+    document.write('<script src="' + (daily ? "js/daily.js" : "js/app.js") + '"><\/script>');
   })();
 </script>
 </body>

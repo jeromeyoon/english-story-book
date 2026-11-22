@@ -6,9 +6,11 @@
 //   node tools/gen_audio.js <교재id>      → 없는 파일만 새로 만듭니다
 const fs = require("fs"), cp = require("child_process"), os = require("os"), path = require("path");
 const ID = process.argv[2] || "opposites-g1", C = `courses/${ID}`, OUT = `${C}/audio`;
-const src = fs.readFileSync(`${C}/data.js`, "utf8") + fs.readFileSync(`${C}/story.js`, "utf8") + ";module.exports={PAIRS,STORIES}";
+const hasStory = fs.existsSync(`${C}/story.js`);   // 동화 교재(PAIRS/STORIES) 또는 날짜별 문장 교재(DAYS)
+const src = fs.readFileSync(`${C}/data.js`, "utf8") + (hasStory ? fs.readFileSync(`${C}/story.js`, "utf8") : "") +
+  ";module.exports={PAIRS:typeof PAIRS==='undefined'?[]:PAIRS,STORIES:typeof STORIES==='undefined'?[]:STORIES,DAYS:typeof DAYS==='undefined'?[]:DAYS}";
 const m = { exports: {} }; new Function("module", src)(m);
-const { PAIRS, STORIES } = m.exports;
+const { PAIRS, STORIES, DAYS } = m.exports;
 const slug = t => t.toLowerCase().replace(/___/g, " blank ").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); // app.js 와 같은 규칙
 const blank = side => side.s.replace(new RegExp(side.w[0], "i"), "___");
 // 목소리: 엄마·진행(기본)=af_heart, 아이(Mimi)=af_heart 를 15% 높인 소리. 바꾸려면 아래를 고치고 audio/ 의 해당 파일을 지운 뒤 다시 실행
@@ -28,9 +30,17 @@ for (const S of STORIES) {
     });
   }
 }
+// 날짜별 문장 교재: 문장(보통 속도) + 천천히 읽기(slow_) + 낱말(순서 맞추기 때 누르면 읽어 줌)
+const slowTexts = new Set();
+for (const D of DAYS) for (const x of D.sentences) {
+  texts.add(x.en); slowTexts.add(x.en);
+  x.en.split(/\s+/).map(w => w.replace(/^[^A-Za-z0-9']+|[^A-Za-z0-9']+$/g, "")).filter(Boolean).forEach(w => texts.add(w));
+}
 fs.mkdirSync(OUT, { recursive: true });
 const keys = []; let made = 0;
-const jobs = [...[...texts].map(t => ({ t, k: slug(t), v: VOICES.default })), ...[...mimiTexts].map(t => ({ t, k: "mimi_" + slug(t), v: VOICES.mimi }))];
+const SLOW = { ...VOICES.default, speed: 0.65 };
+const jobs = [...[...texts].map(t => ({ t, k: slug(t), v: VOICES.default })), ...[...mimiTexts].map(t => ({ t, k: "mimi_" + slug(t), v: VOICES.mimi })),
+  ...[...slowTexts].map(t => ({ t, k: "slow_" + slug(t), v: SLOW }))];
 const todo = [];
 for (const { t, k, v } of jobs) {
   if (!slug(t) || keys.includes(k)) continue; keys.push(k);

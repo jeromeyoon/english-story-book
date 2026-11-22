@@ -1,0 +1,148 @@
+{
+ "dir": "courses/readinggate/img/",
+ "style": "see art/STYLE.md",
+ "priority": [
+  "character",
+  "story",
+  "word"
+ ],
+ "counts": {
+  "character": {
+   "total": 4,
+   "missing": 0
+  },
+  "story": {
+   "total": 9,
+   "missing": 9
+  }
+ },
+ "items": [
+  {
+   "kind": "character",
+   "file": "mimi.png",
+   "size": "512x512",
+   "desc": "Mimi, white child bunny, pink inner ears, blue overalls, waving, friendly smile",
+   "done": true
+  },
+  {
+   "kind": "character",
+   "file": "mimi-happy.png",
+   "size": "512x512",
+   "desc": "Mimi jumping with joy (correct answer)",
+   "done": true
+  },
+  {
+   "kind": "character",
+   "file": "mimi-oops.png",
+   "size": "512x512",
+   "desc": "Mimi tilting head, small sweat drop, encouraging (wrong answer)",
+   "done": true
+  },
+  {
+   "kind": "character",
+   "file": "mom.png",
+   "size": "512x512",
+   "desc": "Mimi's mom: adult white bunny, pink inner ears, yellow apron, warm kind smile",
+   "done": true
+  },
+  {
+   "kind": "story",
+   "file": "story/d1-1.png",
+   "size": "1024x768",
+   "desc": "Comic panel (4:3, full background, no text, keep top 30% calm) set in Mimi's bedroom and kitchen in the morning. Mimi (child bunny) and, if natural, Mom bunny. Show this sentence clearly: Mimi waking up in bed, stretching, a clock on the wall showing seven o'clock, morning sun through the window",
+   "dialogue": [
+    "I wake up at seven. (나는 7시에 일어나요.)"
+   ],
+   "placeholder": "⏰",
+   "done": false
+  },
+  {
+   "kind": "story",
+   "file": "story/d1-2.png",
+   "size": "1024x768",
+   "desc": "Comic panel (4:3, full background, no text, keep top 30% calm) set in Mimi's bedroom and kitchen in the morning. Mimi (child bunny) and, if natural, Mom bunny. Show this sentence clearly: Mimi brushing her teeth at the bathroom sink, toothbrush in hand, foam bubbles, Mom smiling behind her",
+   "dialogue": [
+    "I brush my teeth. (나는 이를 닦아요.)"
+   ],
+   "placeholder": "🪥",
+   "done": false
+  },
+  {
+   "kind": "story",
+   "file": "story/d1-3.png",
+   "size": "1024x768",
+   "desc": "Comic panel (4:3, full background, no text, keep top 30% calm) set in Mimi's bedroom and kitchen in the morning. Mimi (child bunny) and, if natural, Mom bunny. Show this sentence clearly: Mimi and Mom bunny eating breakfast together at the kitchen table, bread and milk",
+   "dialogue": [
+    "I eat breakfast with Mom. (나는 엄마와 아침을 먹어요.)"
+   ],
+   "placeholder": "🥣",
+   "done": false
+  },
+  {
+   "kind": "story",
+   "file": "story/d2-1.png",
+   "size": "1024x768",
+   "desc": "Comic panel (4:3, full background, no text, keep top 30% calm) set in a school bus stop and a bright classroom. Mimi (child bunny) and, if natural, Mom bunny. Show this sentence clearly: Mimi sitting by the window of a yellow school bus, waving, the school building ahead",
+   "dialogue": [
+    "I go to school by bus. (나는 버스를 타고 학교에 가요.)"
+   ],
+   "placeholder": "🚌",
+   "done": false
+  },
+  {
+   "kind": "story",
+   "file": "story/d2-2.png",
+   "size": "1024x768",
+   "desc": "Comic panel (4:3, full background, no text, keep top 30% calm) set in a school bus stop and a bright classroom. Mimi (child bunny) and, if natural, Mom bunny. Show this sentence clearly: Mimi smiling at a kind teacher (a friendly animal teacher) in a classroom, a heart above Mimi",
+   "dialogue": [
+    "I like my teacher. (나는 우리 선생님이 좋아요.)"
+   ],
+   "placeholder": "👩‍🏫",
+   "done": false
+  },
+  {
+   "kind": "story",
+   "file": "story/d2-3.png",
+   "size": "1024x768",
+   "desc": "Comic panel (4:3, full background, no text, keep top 30% calm) set in a school bus stop and a bright classroom. Mimi (child bunny) and, if natural, Mom bunny. Show this sentence clearly: Mimi and two classmates (small animals) sitting together reading picture books in a classroom corner",
+   "dialogue": [
+    "We read books together. (우리는 함께 책을 읽어요.)"
+   ],
+   "placeholder": "📚",
+   "done": false
+  },
+  {
+   "kind": "story",
+   "file": "story/d3-1.png",
+   "size": "1024x768",
+   "desc": "Comic panel (4:3, full background, no text, keep top 30% calm) set in a park, Mimi's desk at home, and Mimi's bedroom at night. Mimi (child bunny) and, if natural, Mom bunny. Show this sentence clearly: Mimi playing with two friends (small animals) in a sunny park, kicking a ball",
+   "dialogue": [
+    "I play with my friends. (나는 친구들과 놀아요.)"
+   ],
+   "placeholder": "⚽",
+   "done": false
+  },
+  {
+   "kind": "story",
+   "file": "story/d3-2.png",
+   "size": "1024x768",
+   "desc": "Comic panel (4:3, full background, no text, keep top 30% calm) set in a park, Mimi's desk at home, and Mimi's bedroom at night. Mimi (child bunny) and, if natural, Mom bunny. Show this sentence clearly: Mimi doing homework at her desk with a pencil and notebook, Mom bunny watching kindly, a lamp on",
+   "dialogue": [
+    "I do my homework. (나는 숙제를 해요.)"
+   ],
+   "placeholder": "✏️",
+   "done": false
+  },
+  {
+   "kind": "story",
+   "file": "story/d3-3.png",
+   "size": "1024x768",
+   "desc": "Comic panel (4:3, full background, no text, keep top 30% calm) set in a park, Mimi's desk at home, and Mimi's bedroom at night. Mimi (child bunny) and, if natural, Mom bunny. Show this sentence clearly: Mimi in pajamas getting into bed, moon outside the window, a clock showing nine o'clock, Mom tucking her in",
+   "dialogue": [
+    "I go to bed at nine. (나는 9시에 자요.)"
+   ],
+   "placeholder": "🛏️",
+   "done": false
+  }
+ ]
+}

@@ -12,4 +12,17 @@ const COURSES = [
     cover: "courses/opposites-g1/img/story/1-cover.jpg",
     color: "#ff8fa3",
   },
+  {
+    id: "readinggate",
+    type: "daily",                       // daily = 날짜(Day)별 문장 외우기 교재
+    grade: "초등 1학년",
+    subject: "영어",
+    title: "리딩게이트 오늘의 문장",
+    en: "Daily Sentences",
+    desc: "매일 2~3문장을 듣고, 따라 말하고, 빈칸 · 순서 맞추기로 외워요. 외운 문장은 잊을 때쯤 다시 복습해요.",
+    days: 3,
+    sentences: 9,
+    cover: "courses/readinggate/img/mimi.png",
+    color: "#ffb86b",
+  },
 ];

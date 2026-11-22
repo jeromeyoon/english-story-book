@@ -1,5 +1,5 @@
-const CACHE = "oq-v7";
-const CORE = ["./", "index.html", "play.html", "css/style.css", "css/landing.css", "js/app.js", "courses/courses.js", "manifest.webmanifest", "icon.svg"];
+const CACHE = "oq-v9";
+const CORE = ["./", "index.html", "play.html", "css/style.css", "css/landing.css", "js/app.js", "js/sound.js", "js/daily.js", "courses/courses.js", "manifest.webmanifest", "icon.svg"];
 self.addEventListener("install", e => e.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE)).then(() => self.skipWaiting())));
 self.addEventListener("activate", e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));
 // 네트워크 우선(그림/코드 업데이트 반영), 실패 시 캐시 → 오프라인에서도 동작

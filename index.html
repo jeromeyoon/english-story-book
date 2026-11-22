@@ -41,10 +41,13 @@
 <script src="courses/courses.js"></script>
 <script>
   (function () {
+    // 진행도: 동화 교재 = 책별 별 합계 / 날짜별 교재 = Day별 별 합계
     function stars(c) {
       try {
-        var s = JSON.parse(localStorage.getItem("oq:" + c.id) || "{}").stars || {}, n = 0;
-        for (var i = 1; i <= c.books; i++) n += s["story" + i] || 0;
+        var d = JSON.parse(localStorage.getItem("oq:" + c.id) || "{}"), n = 0, i;
+        if (c.type === "daily") { for (i in (d.days || {})) n += d.days[i].stars || 0; return n; }
+        var s = d.stars || {};
+        for (i = 1; i <= c.books; i++) n += s["story" + i] || 0;
         return n;
       } catch (e) { return 0; }
     }
@@ -54,14 +57,14 @@
     function render() {
       var box = document.getElementById("courses");
       box.innerHTML = COURSES.filter(function (c) { return cur === "전체" || c.grade === cur; }).map(function (c) {
-        var n = stars(c), max = c.books * 3;
+        var daily = c.type === "daily", n = stars(c), max = (daily ? c.days : c.books) * 3;
         return '<a class="course" href="play.html?c=' + encodeURIComponent(c.id) + '" style="--c:' + c.color + '">' +
           '<span class="cover"><img src="' + c.cover + '" alt="" loading="lazy" onerror="this.remove()"></span>' +
           '<span class="body"><span class="tag">' + c.grade + ' · ' + c.subject + '</span>' +
           '<b>' + c.title + '</b><i>' + c.en + '</i><span class="desc">' + c.desc + '</span>' +
-          '<span class="meta">동화 ' + c.books + '권 · 반대말 ' + c.pairs + '쌍</span>' +
+          '<span class="meta">' + (daily ? '매일 ' + c.days + 'Day · 문장 ' + c.sentences + '개' : '동화 ' + c.books + '권 · 반대말 ' + c.pairs + '쌍') + '</span>' +
           '<span class="prog" aria-label="별 ' + n + '/' + max + '"><span style="width:' + (n / max * 100) + '%"></span></span>' +
-          '<span class="go">읽으러 가기 ▶</span></span></a>';
+          '<span class="go">' + (daily ? '외우러 가기 ▶' : '읽으러 가기 ▶') + '</span></span></a>';
       }).join("");
     }
     if (grades.length > 1) {
