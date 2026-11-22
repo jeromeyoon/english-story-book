@@ -13,7 +13,7 @@
   },
   "story": {
    "total": 3,
-   "missing": 3
+   "missing": 0
   }
  },
  "items": [
@@ -54,7 +54,7 @@
     "I'll put a square on top. (내가 맨 위에 네모를 놓을게.)"
    ],
    "placeholder": "🟦",
-   "done": false
+   "done": true
   },
   {
    "kind": "story",
@@ -65,7 +65,7 @@
     "Lilly pulled out a circle. (릴리가 동그라미를 꺼냈어요.)"
    ],
    "placeholder": "⭕",
-   "done": false
+   "done": true
   },
   {
    "kind": "story",
@@ -76,7 +76,7 @@
     "Kevin adds smaller triangles. (케빈이 더 작은 세모를 붙여요.)"
    ],
    "placeholder": "🔺",
-   "done": false
+   "done": true
   }
  ]
 }
