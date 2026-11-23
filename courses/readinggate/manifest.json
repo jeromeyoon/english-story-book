@@ -13,7 +13,7 @@
   },
   "story": {
    "total": 7,
-   "missing": 4
+   "missing": 0
   }
  },
  "items": [
@@ -87,7 +87,7 @@
     "Kevin throws his fishing line into the lake. (케빈이 낚싯줄을 호수에 던져요.)"
    ],
    "placeholder": "🎣",
-   "done": false
+   "done": true
   },
   {
    "kind": "story",
@@ -98,7 +98,7 @@
     "She reels in her line quickly. (그녀는 낚싯줄을 빠르게 감아요.)"
    ],
    "placeholder": "⚡",
-   "done": false
+   "done": true
   },
   {
    "kind": "story",
@@ -109,7 +109,7 @@
     "Mom roasts the fish over the fire. (엄마가 불 위에서 생선을 구워요.)"
    ],
    "placeholder": "🔥",
-   "done": false
+   "done": true
   },
   {
    "kind": "story",
@@ -120,7 +120,7 @@
     "Lebron throws Kitty a piece of fish. (르브론이 키티에게 생선 한 조각을 던져 줘요.)"
    ],
    "placeholder": "🐱",
-   "done": false
+   "done": true
   }
  ]
 }
