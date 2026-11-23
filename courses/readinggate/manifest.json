@@ -12,8 +12,8 @@
    "missing": 0
   },
   "story": {
-   "total": 3,
-   "missing": 0
+   "total": 7,
+   "missing": 4
   }
  },
  "items": [
@@ -77,6 +77,50 @@
    ],
    "placeholder": "🔺",
    "done": true
+  },
+  {
+   "kind": "story",
+   "file": "story/d2-1.png",
+   "size": "1024x768",
+   "desc": "Comic panel (4:3, full background, no text, keep top 30% calm) set in a sunny lakeside camping spot with a lake, trees and a campfire; characters: Lilly (little girl, pink shirt, pink hairclip), Kevin (little boy, green shirt), their Mom (a friendly adult woman), Lebron (a little boy, new friend) and Kitty (a small cute kitten); Lilly and Kevin look exactly like in the Day 1 pictures (simple round faces, flat style). Mimi (child bunny) and, if natural, Mom bunny. Show this sentence clearly: Kevin (little boy, green shirt) standing at the edge of a lake, swinging his fishing rod forward so the fishing line flies out over the water; Lilly watching beside him",
+   "dialogue": [
+    "Kevin throws his fishing line into the lake. (케빈이 낚싯줄을 호수에 던져요.)"
+   ],
+   "placeholder": "🎣",
+   "done": false
+  },
+  {
+   "kind": "story",
+   "file": "story/d2-2.png",
+   "size": "1024x768",
+   "desc": "Comic panel (4:3, full background, no text, keep top 30% calm) set in a sunny lakeside camping spot with a lake, trees and a campfire; characters: Lilly (little girl, pink shirt, pink hairclip), Kevin (little boy, green shirt), their Mom (a friendly adult woman), Lebron (a little boy, new friend) and Kitty (a small cute kitten); Lilly and Kevin look exactly like in the Day 1 pictures (simple round faces, flat style). Mimi (child bunny) and, if natural, Mom bunny. Show this sentence clearly: Lilly (little girl, pink shirt) turning the reel of her fishing rod fast with a small fish jumping at the end of the line, motion lines on the reel, excited face",
+   "dialogue": [
+    "She reels in her line quickly. (그녀는 낚싯줄을 빠르게 감아요.)"
+   ],
+   "placeholder": "⚡",
+   "done": false
+  },
+  {
+   "kind": "story",
+   "file": "story/d2-3.png",
+   "size": "1024x768",
+   "desc": "Comic panel (4:3, full background, no text, keep top 30% calm) set in a sunny lakeside camping spot with a lake, trees and a campfire; characters: Lilly (little girl, pink shirt, pink hairclip), Kevin (little boy, green shirt), their Mom (a friendly adult woman), Lebron (a little boy, new friend) and Kitty (a small cute kitten); Lilly and Kevin look exactly like in the Day 1 pictures (simple round faces, flat style). Mimi (child bunny) and, if natural, Mom bunny. Show this sentence clearly: Mom (friendly adult woman) holding a stick with a fish over a small campfire, Lilly and Kevin sitting nearby watching happily",
+   "dialogue": [
+    "Mom roasts the fish over the fire. (엄마가 불 위에서 생선을 구워요.)"
+   ],
+   "placeholder": "🔥",
+   "done": false
+  },
+  {
+   "kind": "story",
+   "file": "story/d2-4.png",
+   "size": "1024x768",
+   "desc": "Comic panel (4:3, full background, no text, keep top 30% calm) set in a sunny lakeside camping spot with a lake, trees and a campfire; characters: Lilly (little girl, pink shirt, pink hairclip), Kevin (little boy, green shirt), their Mom (a friendly adult woman), Lebron (a little boy, new friend) and Kitty (a small cute kitten); Lilly and Kevin look exactly like in the Day 1 pictures (simple round faces, flat style). Mimi (child bunny) and, if natural, Mom bunny. Show this sentence clearly: Lebron (a little boy) tossing a small piece of fish through the air toward Kitty, a cute kitten with open paws ready to catch it, camp and trees in the background",
+   "dialogue": [
+    "Lebron throws Kitty a piece of fish. (르브론이 키티에게 생선 한 조각을 던져 줘요.)"
+   ],
+   "placeholder": "🐱",
+   "done": false
   }
  ]
 }
