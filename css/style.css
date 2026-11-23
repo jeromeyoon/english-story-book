@@ -124,3 +124,7 @@ mark.right-ans { background: #bff0cf; color: #1f7a4a; } mark.wrong-ans { backgro
 .review .listen { width: 100%; }
 
 .daily .scene.big { max-height: 30vh; } .daily .book { gap: 10px; }
+
+.chip small { display: block; font-size: .5em; font-weight: 400; opacity: .7; }
+.rec { display: flex; gap: 10px; justify-content: center; align-items: center; flex-wrap: wrap; }
+.rec .btn { font-size: .9em; padding: 8px 20px; }

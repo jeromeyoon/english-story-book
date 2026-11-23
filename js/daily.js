@@ -37,16 +37,46 @@
     `<img alt="" src="${BASE}img/mimi${mood ? "-" + mood : ""}.png" onerror="this.parentNode.classList.add('fb');this.remove()"></span>`;
 
   // ---------- 화면 틀 ----------
-  let backFn = null, timers = [];
+  let backFn = null, timers = [], recCleanup = null;
   const later = (fn, ms) => { const t = setTimeout(fn, ms); timers.push(t); };
   const show = (html, { t = window.COURSE.title, onBack = null } = {}) => {
-    timers.forEach(clearTimeout); timers = [];
+    timers.forEach(clearTimeout); timers = []; if (recCleanup) { recCleanup(); recCleanup = null; }
     app.innerHTML = html; title.textContent = t; backFn = onBack;
     back.style.visibility = onBack ? "visible" : "hidden"; app.scrollTop = 0;
   };
   back.addEventListener("click", () => backFn && backFn());
   const on = (sel, fn) => app.querySelectorAll(sel).forEach((el) => el.addEventListener("click", () => fn(el)));
   const bar = (i, n) => `<div class="progress"><i style="width:${Math.round(i / n * 100)}%"></i></div>`;
+
+  // ---------- 내 목소리 녹음해서 비교 (녹음은 기기 안에서만 잠깐 쓰고 저장·전송하지 않음) ----------
+  const REC = !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
+  const recHtml = () => REC ? `<div class="rec"><button class="btn" id="rec">🎙️ 내 목소리 녹음</button>
+    <span id="recplay" hidden><button class="btn" id="mine">▶ 내 소리</button><button class="btn" id="orig">🔊 원래 소리</button></span>
+    <span class="hint" id="recmsg"></span></div>` : "";
+  function bindRec(x) {
+    if (!REC || !app.querySelector("#rec")) return;
+    let mr = null, stream = null, url = null, chunks = [];
+    const mine = new Audio(), msg = (t) => { app.querySelector("#recmsg").textContent = t; };
+    const stop = () => { try { if (mr && mr.state === "recording") mr.stop(); } catch (e) {} };
+    recCleanup = () => { stop(); try { mine.pause(); } catch (e) {} if (stream) stream.getTracks().forEach((t) => t.stop()); if (url) URL.revokeObjectURL(url); };
+    on("#rec", (btn) => {
+      if (mr && mr.state === "recording") return stop();
+      navigator.mediaDevices.getUserMedia({ audio: true }).then((s) => {
+        stream = s; chunks = []; window.Sound.stop();
+        mr = new MediaRecorder(s);
+        mr.ondataavailable = (e) => e.data && e.data.size && chunks.push(e.data);
+        mr.onstop = () => {
+          s.getTracks().forEach((t) => t.stop()); btn.textContent = "🎙️ 다시 녹음";
+          if (url) URL.revokeObjectURL(url);
+          url = URL.createObjectURL(new Blob(chunks, { type: mr.mimeType || "audio/mp4" })); mine.src = url;
+          app.querySelector("#recplay").hidden = false; msg(""); const p = mine.play(); if (p && p.catch) p.catch(() => {});
+        };
+        mr.start(); btn.textContent = "⏹ 멈추기"; msg("말해 보세요…"); later(stop, 8000);
+      }).catch(() => msg("마이크를 쓸 수 없어요. 설정에서 마이크를 허용해 주세요."));
+    });
+    on("#mine", () => { window.Sound.stop(); mine.currentTime = 0; const p = mine.play(); if (p && p.catch) p.catch(() => {}); });
+    on("#orig", () => { try { mine.pause(); } catch (e) {} speak([x.en]); });
+  }
 
   // ---------- 홈 ----------
   function home() {
@@ -88,11 +118,12 @@
       <div class="step">① 듣고 따라 말해요</div>
       <p class="sent">${esc(x.en)}</p><p class="ko">${esc(x.ko)}</p>
       <div class="opts"><button class="btn" id="p1">🔊 듣기</button><button class="btn" id="p2">🐢 천천히</button></div>
+      ${recHtml()}
       <div class="opts"><button class="btn good big" id="said">따라 말했어요 <small id="n">0/3</small></button></div></div>`, { t: name0(), onBack: ctx.back });
     const hear = () => speak([x.en]);
     on("#p1", hear); on("#p2", () => speak([[x.en, "slow"]]));
     on("#said", () => { n++; app.querySelector("#n").textContent = n + "/3"; beep(true); if (n >= 3) later(() => ctx.next(), 350); else hear(); });
-    later(hear, 250);
+    later(hear, 250); bindRec(x);
   }
 
   // 2) 빈칸 채우기
@@ -157,16 +188,37 @@
       <p class="sent ko-big">${esc(x.ko)}</p>
       <p class="sent" id="en" hidden>${esc(x.en)}</p>
       <div class="opts" id="a1"><button class="btn big" id="show">🔍 정답 보기</button></div>
-      <div class="opts" id="a2" hidden><button class="btn good big" id="ok">😊 말했어요!</button><button class="btn big" id="again">🔁 다시 해 볼래요</button></div></div>`, { t: name0(), onBack: ctx.back });
-    on("#show", () => { app.querySelector("#en").hidden = false; app.querySelector("#a1").hidden = true; app.querySelector("#a2").hidden = false; speak([x.en]); });
+      <div class="opts" id="a2" hidden><button class="btn good big" id="ok">😊 말했어요!</button><button class="btn big" id="again">🔁 다시 해 볼래요</button></div>
+      <div id="recwrap" hidden>${recHtml()}</div></div>`, { t: name0(), onBack: ctx.back });
+    on("#show", () => { app.querySelector("#en").hidden = false; app.querySelector("#a1").hidden = true; app.querySelector("#a2").hidden = false; app.querySelector("#recwrap").hidden = false; speak([x.en]); });
     on("#ok", () => { beep(true); ctx.next(); });
+    bindRec(x);
     on("#again", () => { ctx.miss(); app.querySelector("#en").hidden = true; app.querySelector("#a1").hidden = false; app.querySelector("#a2").hidden = true; });
+  }
+
+  // 5) 단어 바꿔서 말하기 (문장 틀 응용: square → circle ...)
+  function sSwap(x, ctx) {
+    const [i, tot] = ctx.pos(), sw = x.swap[0], opts = [{ w: sw.w, ko: sw.ko, e: sw.e }, ...sw.alts], seen = new Set([0]);
+    const re = new RegExp("\\b" + sw.w + "\\b", "i");
+    const line = (o) => esc(x.en).replace(re, `<mark>${esc(o.w)}</mark>`);
+    show(`${bar(i, tot)}<div class="book"><div class="scene big fb" style="--c:${x.color}"><span class="emo" id="swe">${sw.e}</span></div>
+      <div class="step">⑤ 말을 바꿔서 말해요</div>
+      <p class="sent" id="sw">${line(opts[0])}</p>
+      <div class="opts">${opts.map((o, k) => `<button class="chip" data-i="${k}">${o.e} ${esc(o.w)}<small>${esc(o.ko)}</small></button>`).join("")}</div>
+      <div class="opts"><button class="btn big" id="nx" hidden>다음 ▶</button></div></div>`, { t: name0(), onBack: ctx.back });
+    on("[data-i]", (el) => {
+      const k = +el.dataset.i, o = opts[k]; seen.add(k);
+      app.querySelector("#sw").innerHTML = line(o); app.querySelector("#swe").textContent = o.e;
+      speak([x.en.replace(re, o.w)]); beep(true);
+      if (seen.size === opts.length) app.querySelector("#nx").hidden = false;
+    });
+    on("#nx", () => ctx.next());
   }
 
   // ---------- Day 학습 ----------
   function startDay(n) {
     const D = DAYS.find((d) => d.day === n), xs = byDay(n), name = `Day ${n} · ${D.title}`;
-    const steps = [...xs.map((x) => ({ f: sListen, x })), ...xs.map((x) => ({ f: sBlank, x })), ...xs.map((x) => ({ f: sOrder, x })), ...xs.map((x) => ({ f: sRecall, x }))];
+    const steps = [...xs.map((x) => ({ f: sListen, x })), ...xs.map((x) => ({ f: sBlank, x })), ...xs.map((x) => ({ f: sOrder, x })), ...xs.map((x) => ({ f: sRecall, x })), ...xs.filter((x) => x.swap).map((x) => ({ f: sSwap, x }))];
     title.textContent = name;
     run(steps, name, (mist) => {
       const s = state(), t = today(), st = mist <= 1 ? 3 : mist <= 4 ? 2 : 1;

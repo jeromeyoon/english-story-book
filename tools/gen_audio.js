@@ -34,6 +34,7 @@ for (const S of STORIES) {
 const slowTexts = new Set();
 for (const D of DAYS) for (const x of D.sentences) {
   texts.add(x.en); slowTexts.add(x.en);
+  for (const sw of x.swap || []) for (const alt of sw.alts) texts.add(x.en.replace(new RegExp("\\b" + sw.w + "\\b", "i"), alt.w));   // 단어 바꿔 말하기 문장
   x.en.split(/\s+/).map(w => w.replace(/^[^A-Za-z0-9']+|[^A-Za-z0-9']+$/g, "")).filter(Boolean).forEach(w => texts.add(w));
 }
 fs.mkdirSync(OUT, { recursive: true });
