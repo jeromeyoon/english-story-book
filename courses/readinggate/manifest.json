@@ -12,8 +12,8 @@
    "missing": 0
   },
   "story": {
-   "total": 7,
-   "missing": 0
+   "total": 11,
+   "missing": 4
   }
  },
  "items": [
@@ -121,6 +121,50 @@
    ],
    "placeholder": "🐱",
    "done": true
+  },
+  {
+   "kind": "story",
+   "file": "story/d3-1.png",
+   "size": "1024x768",
+   "desc": "Comic panel (4:3, full background, no text, keep top 30% calm) set in a yellow bus, a sunny country path and a lakeside where animals gather; characters: Lilly (little girl, pink shirt, pink hairclip) and Kevin (little boy, green shirt) look exactly like in the Day 1 and Day 2 pictures (simple round faces, flat style). Mimi (child bunny) and, if natural, Mom bunny. Show this sentence clearly: Kevin (little boy, green shirt) hopping up the steps of a big yellow bus with a happy jump, Lilly waiting behind him, a friendly bus driver visible in the bus window",
+   "dialogue": [
+    "I hop on the bus. (나는 버스에 올라타요.)"
+   ],
+   "placeholder": "🚌",
+   "done": false
+  },
+  {
+   "kind": "story",
+   "file": "story/d3-2.png",
+   "size": "1024x768",
+   "desc": "Comic panel (4:3, full background, no text, keep top 30% calm) set in a yellow bus, a sunny country path and a lakeside where animals gather; characters: Lilly (little girl, pink shirt, pink hairclip) and Kevin (little boy, green shirt) look exactly like in the Day 1 and Day 2 pictures (simple round faces, flat style). Mimi (child bunny) and, if natural, Mom bunny. Show this sentence clearly: Lilly and Kevin leaning forward with curious wide eyes, Lilly holding a big magnifying glass up, looking out of a bus window toward the lake in the distance",
+   "dialogue": [
+    "Let's find out. (알아보자.)"
+   ],
+   "placeholder": "🔍",
+   "done": false
+  },
+  {
+   "kind": "story",
+   "file": "story/d3-3.png",
+   "size": "1024x768",
+   "desc": "Comic panel (4:3, full background, no text, keep top 30% calm) set in a yellow bus, a sunny country path and a lakeside where animals gather; characters: Lilly (little girl, pink shirt, pink hairclip) and Kevin (little boy, green shirt) look exactly like in the Day 1 and Day 2 pictures (simple round faces, flat style). Mimi (child bunny) and, if natural, Mom bunny. Show this sentence clearly: Kevin (little boy, green shirt) pointing with surprise at a row of cute animals (a duckling, a rabbit, a deer, a turtle) standing in a neat line beside a lake",
+   "dialogue": [
+    "He spots animals lining up. (그는 동물들이 줄을 서 있는 것을 발견해요.)"
+   ],
+   "placeholder": "🦆",
+   "done": false
+  },
+  {
+   "kind": "story",
+   "file": "story/d3-4.png",
+   "size": "1024x768",
+   "desc": "Comic panel (4:3, full background, no text, keep top 30% calm) set in a yellow bus, a sunny country path and a lakeside where animals gather; characters: Lilly (little girl, pink shirt, pink hairclip) and Kevin (little boy, green shirt) look exactly like in the Day 1 and Day 2 pictures (simple round faces, flat style). Mimi (child bunny) and, if natural, Mom bunny. Show this sentence clearly: Lilly (little girl, pink shirt) skipping happily along a sunny path toward a sparkling blue lake, arms swinging, flowers along the path",
+   "dialogue": [
+    "I skip to the lake. (나는 깡충깡충 호수로 가요.)"
+   ],
+   "placeholder": "🏞️",
+   "done": false
   }
  ]
 }
